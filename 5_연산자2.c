@@ -23,7 +23,6 @@ int is_odd(int n)
   // return n & 1 == 1;
   return n & 1 == 1;
 }
-// 문제점?
 
 int main(void)
 {

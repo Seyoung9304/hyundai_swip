@@ -25,6 +25,7 @@ int main(void)
 //  - 메모리에 저장됩니다.
 //  - 저장된 메모리의 주소를 가집니다.
 
+#if 0
 #include <stdlib.h>
 
 int global = 10;
@@ -50,6 +51,30 @@ int main(void)
 
   // %d: 10진수 정수 출력
   // %p: 주소 출력
+
+  return 0;
+}
+#endif
+
+// 3. 변수의 크기는 타입에 의해서 결정됩니다.
+//  => 타입을 구하는 방법
+//     '식별자'를 제외한 나머지가 타입입니다.
+//  int n;       => int
+//  int x[3];    => int[3]
+
+//  => 타입과 변수의 크기를 구하고 싶다면
+//     sizeof(타입)
+//     sizeof 변수 / sizeof(변수)
+
+#include <stdio.h>
+
+int main(void)
+{
+  printf("%zu\n", sizeof(int));
+
+  int n;
+  printf("%zu\n", sizeof(n));
+  printf("%zu\n", sizeof n);
 
   return 0;
 }

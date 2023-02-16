@@ -28,6 +28,8 @@ void foo(void)
 
 int main(void)
 {
+  // printf("%d\n", count); // error!
+
   foo();
   foo();
   foo();

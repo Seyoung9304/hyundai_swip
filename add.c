@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "add.h"
+#include "test.h"
 
 // 선언
 // extern int global;

@@ -114,7 +114,6 @@ int main(void)
 //   : 반드시 괄호를 사용해야 합니다.
 
 //  => 연산자 우선순위는 결합을 결정합니다.
-
 int main(void)
 {
   int a, b, c;

@@ -1,8 +1,12 @@
 // main.c
+#include "add.h"
 
+// 정의
 int global = 100;
+static int internal_global = 1000;
 
-void foo(void);
+// 선언
+// void foo(void);
 
 int main(void)
 {

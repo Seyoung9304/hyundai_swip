@@ -4,9 +4,11 @@
 // 함수: 입력을 받아서 주어진 연산을 수행한 후 결과를 반환하는
 //      코드의 집합입니다.
 
-void print_n(int n)
+// 반환타입 함수이름(입력 타입....)
+int print_n(int n)
 {
   printf("%d\n", n);
+  return 0;
 }
 
 int main(void)

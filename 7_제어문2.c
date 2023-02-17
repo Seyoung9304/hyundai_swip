@@ -76,7 +76,7 @@ int main(void)
 int main(void)
 {
 #if 0
-  for (int i = 0; i < 10; ++i)
+  for (int i = 0; i < 10; i++)
   {
     if (i % 2 == 1)
     {
@@ -85,7 +85,7 @@ int main(void)
   }
 #endif
 #if 0
-  for (int i = 0; i < 10; ++i)
+  for (int i = 0; i < 10; i++)
   {
     if (i % 2 == 0)
     {
@@ -101,12 +101,12 @@ int main(void)
   {
     if (i % 2 == 0)
     {
-      ++i;
+      i++;
       continue;
     }
 
     printf("%d\n", i);
-    ++i;
+    i++;
   }
 
   return 0;

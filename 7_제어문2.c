@@ -49,6 +49,7 @@ int main(void)
 //  -    break: 반복문을 탈출할 때 사용합니다.
 //  - continue: 반복문의 실행 구문을 더이상 수행하지 않고, 조건으로 넘어갑니다.
 
+#if 0
 int main(void)
 {
 
@@ -65,6 +66,47 @@ int main(void)
     scanf("%d", &n);
     if (n < 0)
       break;
+  }
+
+  return 0;
+}
+#endif
+
+// continue의 동작에서 달라지는 부분을 이해하는 것이 중요합니다.
+int main(void)
+{
+#if 0
+  for (int i = 0; i < 10; ++i)
+  {
+    if (i % 2 == 1)
+    {
+      printf("%d\n", i);
+    }
+  }
+#endif
+#if 0
+  for (int i = 0; i < 10; ++i)
+  {
+    if (i % 2 == 0)
+    {
+      continue;
+    }
+
+    printf("%d\n", i);
+  }
+#endif
+
+  int i = 0;
+  while (i < 10)
+  {
+    if (i % 2 == 0)
+    {
+      ++i;
+      continue;
+    }
+
+    printf("%d\n", i);
+    ++i;
   }
 
   return 0;

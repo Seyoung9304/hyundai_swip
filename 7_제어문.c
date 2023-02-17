@@ -46,6 +46,7 @@ int main(void)
 //  : switch 문을 빠져나갈 수 있습니다.
 // 2) default
 //  : 값이 매칭되지 않는 경우, 수행되는 루틴입니다.
+#if 0
 int main(void)
 {
   int score;
@@ -68,6 +69,31 @@ int main(void)
   default:
     printf("F\n");
   }
+
+  return 0;
+}
+#endif
+
+// 3항 연산자
+int main(void)
+{
+  int n;
+  scanf("%d", &n);
+
+  /*
+    int result;
+    if (n % 2 == 0)
+    {
+      result = 10;
+    }
+    else
+    {
+      result = 20;
+    }
+  */
+
+  int result = (n % 2 == 0) ? 10 : 20;
+  printf("result: %d\n", result);
 
   return 0;
 }

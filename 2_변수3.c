@@ -1,6 +1,7 @@
 // 2_변수3.c
 #include <stdio.h>
 
+#if 0
 int n1 = 10;
 // external linkage: 외부 연결
 // => 다른 파일에서 접근이 가능합니다.
@@ -30,6 +31,27 @@ int main(void)
 {
   // printf("%d\n", count); // error!
 
+  foo();
+  foo();
+  foo();
+
+  return 0;
+}
+
+#endif
+
+void foo(void)
+{
+  static int count = 10;
+  // 정적 지역 변수는 데이터 영역에 생성됩니다.
+  // > 초기화되지 않은 경우 0으로 초기화됩니다.
+  // > 초기화한 경우, 함수가 최초에 실행되는 시점에 한번만 초기화됩니다.
+
+  printf("%d\n", count++);
+}
+
+int main(void)
+{
   foo();
   foo();
   foo();

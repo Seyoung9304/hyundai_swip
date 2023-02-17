@@ -25,7 +25,7 @@ int main(void)
 //  - 메모리에 저장됩니다.
 //  - 저장된 메모리의 주소를 가집니다.
 
-#if 0
+#if 1
 #include <stdlib.h>
 
 int global = 10;

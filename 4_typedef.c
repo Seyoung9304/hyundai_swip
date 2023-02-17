@@ -22,7 +22,7 @@ int main(void)
 // 2. typedef
 //  1) 가독성
 //  => 타입의 목적을 표현하기 유용합니다.
-#if 0
+#if 1
 typedef signed char int8_t;
 typedef short int16_t;
 

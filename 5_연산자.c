@@ -58,6 +58,7 @@ int main(void)
 typedef int BOOL;
 
 // c99 => bool 타입이 도입되었습니다.
+//     => 내장 타입이 아닌 typedef를 통해 제공되고 있습니다.
 #include <stdbool.h>
 
 int main(void)

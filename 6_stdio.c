@@ -74,5 +74,7 @@ int main(void)
     printf("result: %d\n", a + b);
   }
 
+  printf("program end...\n");
+
   return 0;
 }

@@ -1,6 +1,9 @@
 // 10_포인터6.c
 #include <stdio.h>
 
+// int x[10];
+// int x[2]
+// char x[1];
 void print_x1(int *x1, int n)
 {
   for (int i = 0; i < n; i++)

@@ -6,6 +6,7 @@
 //  - if
 //  - if / else
 //  - if / else if / else if / else
+#if 0
 int main(void)
 {
   int score;
@@ -33,6 +34,39 @@ int main(void)
   else
   {
     /* Nothing */;
+  }
+
+  return 0;
+}
+#endif
+
+// 2) switch
+// => 조건을 체크하는 것이 아니라, 값이 동일한지 확인합니다.
+// 1) break
+//  : switch 문을 빠져나갈 수 있습니다.
+// 2) default
+//  : 값이 매칭되지 않는 경우, 수행되는 루틴입니다.
+int main(void)
+{
+  int score;
+  scanf("%d", &score);
+
+  switch (score)
+  {
+  case 1:
+    printf("A\n");
+    break;
+  case 2:
+    printf("B\n");
+    break;
+  case 3:
+    printf("C\n");
+    break;
+  case 4:
+    printf("D\n");
+    // fallthrough
+  default:
+    printf("F\n");
   }
 
   return 0;

@@ -32,6 +32,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
   int x[3] = {10, 20, 30};
@@ -45,3 +46,4 @@ int main(void)
 
   return 0;
 }
+#endif

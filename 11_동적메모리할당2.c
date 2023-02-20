@@ -89,4 +89,6 @@ int main(void)
       // *(*(matrix + i) + j)
     }
   }
+
+  free(matrix); // !!
 }

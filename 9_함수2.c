@@ -44,7 +44,8 @@ void goo(void)
 
 #endif
 
-int add(int a, int b); // 1
+int add(int a, int b); // 1 <-- 권장합니다.
+int add(int, int);     // 2
 
 int main(void)
 {

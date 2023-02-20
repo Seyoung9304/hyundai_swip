@@ -147,6 +147,7 @@ int main(void)
 }
 #endif
 
+#if 0
 error_t foo(int **result)
 {
   static int n = 10;
@@ -163,6 +164,22 @@ int main(void)
   {
     printf("result: %d\n", *result);
   }
+
+  return 0;
+}
+#endif
+
+// ppa ----> pa ----> a
+int main(void)
+{
+  int a = 100;
+
+  int *pa = &a;
+  int **ppa = &pa;
+
+  printf("%d\n", **ppa);
+  **ppa = 42;
+  printf("%d\n", a);
 
   return 0;
 }

@@ -199,6 +199,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
   int a, b;
@@ -215,6 +216,37 @@ int main(void)
 
   printf("%zu\n", sizeof(p1));
   printf("%zu\n", sizeof(p2));
+
+  return 0;
+}
+#endif
+
+#if 0
+void print_x(int *x, int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    printf("%d\n", x[i]);
+  }
+}
+#endif
+
+void print_x(int (*x)[3], int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      printf("%d\n", x[i][j]);
+    }
+  }
+}
+
+int main(void)
+{
+  int x[2][3] = {1, 2, 3, 4, 5, 6};
+  // print_x((int *)x, 6);
+  print_x(x, 2);
 
   return 0;
 }

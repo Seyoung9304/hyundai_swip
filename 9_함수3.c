@@ -5,7 +5,7 @@
 //  정의: 자기 자신을 다시 호출하는 함수
 
 //  재귀 함수는 재귀적인 호출이 무한정되지 않도록
-//  종료 조건을 설정하는 것이 중요합니다.
+//  '종료 조건'을 설정하는 것이 중요합니다.
 #if 0
 void foo(void)
 {
@@ -31,6 +31,7 @@ void print_hello(int n)
 #if 0
 void print_hello(int n)
 {
+  // 종료 조건
   if (n <= 0)
   {
     return;
@@ -47,6 +48,7 @@ void print_hello(int n)
 //     print_hello(1)
 //        "hello"
 //        print_hello(0)
+//          종료 조건 => 종료
 
 int main(void)
 {

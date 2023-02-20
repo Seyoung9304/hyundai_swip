@@ -182,6 +182,8 @@ void foo(void)
     goto out3;
   }
 
+  // ...
+
   fclose(fp3);
 out3:
   fclose(fp2);

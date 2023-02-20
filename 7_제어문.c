@@ -12,27 +12,45 @@ int main(void)
   int score;
   scanf("%d", &score);
 
+  int grade;
+
+  if (score == 100)
+  {
+    if (grade == 0)
+      printf("hello\n");
+  }
+  else
+  {
+    printf("world\n");
+  }
+
   // - 조건의 범위를 좁은 범위부터 넓혀 가는 형태로 만드는게
   //   좋습니다.
   // - else를 반드시 사용하는 것이 좋습니다.
+
   if (score >= 90)
   {
     printf("A\n");
+    grade = 10;
   }
   else if (score >= 80)
   {
     printf("B\n");
+    grade = 9;
   }
   else if (score >= 70)
   {
     printf("C\n");
+    grade = 8;
   }
   else if (score >= 60)
   {
     printf("D\n");
+    grade = 7;
   }
   else
   {
+    grade = 0;
     /* Nothing */;
   }
 
@@ -68,6 +86,7 @@ int main(void)
     // fallthrough
   default:
     printf("F\n");
+    break;
   }
 
   return 0;
@@ -92,7 +111,8 @@ int main(void)
     }
   */
 
-  int result = (n % 2 == 0) ? 10 : 20;
+  int n = 10;
+  int result = (n % 2 == 0) ? n : ++n;
   printf("result: %d\n", result);
 
   return 0;

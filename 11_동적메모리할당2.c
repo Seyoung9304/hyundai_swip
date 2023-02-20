@@ -41,8 +41,12 @@ int main(void)
                  {3, 4},
                  {5, 6}};
 #endif
+  int *p = (int *)malloc(sizeof(int[10]));
+  // int[10]
 
   int(*x)[2] = malloc(sizeof(int[2]) * 3);
+  // int[3][2]
+
   for (int i = 0; i < 3; i++)
   {
     for (int j = 0; j < 2; j++)
@@ -58,4 +62,7 @@ int main(void)
       printf("%d\n", x[i][j]);
     }
   }
+
+  free(p);
+  free(x);
 }

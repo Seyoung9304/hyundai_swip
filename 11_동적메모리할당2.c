@@ -70,6 +70,7 @@ int main(void)
 }
 #endif
 
+#if 0
 void *AllocMatrix(int n1, int n2)
 {
   // static int x[n1][n2];
@@ -91,4 +92,23 @@ int main(void)
   }
 
   free(matrix); // !!
+}
+#endif
+
+// malloc은 초기화되지 않은 메모리를 반환합니다.
+// calloc은 초기화된 메모리를 반환합니다.
+//  => malloc(size_t size)
+//     calloc(size_t count, size_t size);
+
+int main(void)
+{
+  int *p1 = malloc(sizeof(int) * 10);
+
+  int *p2 = calloc(10, sizeof(int));
+  // 0으로 초기화된 메모리를 반환합니다.
+
+  free(p1);
+  free(p2);
+
+  return 0;
 }

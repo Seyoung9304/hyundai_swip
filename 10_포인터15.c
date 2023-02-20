@@ -65,6 +65,7 @@ int main(void)
   int *p = x;
   ++p;
 
+  // 배열 요소의 값이 0인 경우, 끝이라고 가정합니다.
   int arr[5] = {1, 2, 3, 4, 0};
   print_arr(arr);
 }

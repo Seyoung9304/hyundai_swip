@@ -43,6 +43,7 @@ size_t foo(const char *s)
   return sc - s;
 }
 
+#if 0
 int main(void)
 {
   char str[64] = "hello world show me the money";
@@ -53,3 +54,4 @@ int main(void)
 
   return 0;
 }
+#endif

@@ -34,6 +34,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
 #if 0
@@ -66,4 +67,26 @@ int main(void)
 
   free(p);
   free(x);
+}
+#endif
+
+void *AllocMatrix(int n1, int n2)
+{
+  // static int x[n1][n2];
+  return malloc(sizeof(int) * n1 * n2);
+}
+
+int main(void)
+{
+  // int[3][2]
+
+  int(*matrix)[2] = (int(*)[2])AllocMatrix(3, 2);
+  for (int i = 0; i < 3; ++i)
+  {
+    for (int j = 0; j < 2; ++j)
+    {
+      matrix[i][j] = i * 3 + j + 1;
+      // *(*(matrix + i) + j)
+    }
+  }
 }

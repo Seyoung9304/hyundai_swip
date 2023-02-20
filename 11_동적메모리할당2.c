@@ -44,7 +44,8 @@ int main(void)
   int *p = (int *)malloc(sizeof(int[10]));
   // int[10]
 
-  int(*x)[2] = malloc(sizeof(int[2]) * 3);
+  // typedef int (*PARR2)[2];
+  int(*x)[2] = (int(*)[2])malloc(sizeof(int[2]) * 3);
   // int[3][2]
 
   for (int i = 0; i < 3; i++)

@@ -118,6 +118,7 @@ int main(void)
 
 // 4. 문자열 연결: strcat
 //  => 주의: 메모리 공간 충분히 확보해야 합니다.
+#if 0
 int main(void)
 {
   const char *str1 = "hello";
@@ -129,6 +130,18 @@ int main(void)
   strcat(buf, str2); // "helloworld"
 
   printf("%s\n", buf);
+
+  return 0;
+}
+#endif
+
+int main(void)
+{
+  int n = 10;
+  const int *p = &n; // int* -> const int*
+
+  const int c = 42;
+  int *p2 = &c; // const int* -> int*
 
   return 0;
 }

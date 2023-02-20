@@ -1,6 +1,9 @@
 #include <stdio.h>
+#if 0
 int main(void)
 {
+
+  
   const char *s = "hello";
 
   int n = 100;
@@ -14,4 +17,14 @@ int main(void)
   printf("%d\n", *pn);
 
   return 0;
+}
+#endif
+
+int main(void)
+{
+  int n = 10;
+  const int *p = &n; // int* -> const int*
+
+  const int c = 42;
+  int *p2 = &c; // const int* -> int* /* ERROR */
 }

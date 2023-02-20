@@ -16,7 +16,7 @@
 // 3. 포인터 - 포인터
 //    : 같은 배열 안에서만 의미있는 결과입니다.
 //   => offset을 구하는 연산입니다.
-
+#if 0
 int main(void)
 {
   int x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -28,4 +28,43 @@ int main(void)
   printf("%ld\n", p2 - p1); // -5
 
   return 0;
+}
+#endif
+
+void print_arr(int *arr)
+{
+  // 1.
+  for (int i = 0; arr[i] != 0; i++)
+  {
+    printf("%d\n", arr[i]);
+  }
+
+  // 2
+  int *p = arr;
+  while (*p != 0)
+  {
+    printf("%d\n", *p);
+    ++p;
+  }
+
+  // 3.
+  p = arr;
+  while (*p)
+  {
+    printf("%d\n", *p++);
+  }
+}
+
+int main(void)
+{
+  int x[3] = {1, 2, 3};
+
+  // x++;
+  // x += 1;
+
+  int *p = x;
+  ++p;
+
+  int arr[5] = {1, 2, 3, 4, 0};
+  print_arr(arr);
 }

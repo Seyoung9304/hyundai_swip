@@ -135,6 +135,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
   int n = 10;
@@ -145,3 +146,17 @@ int main(void)
 
   return 0;
 }
+#endif
+
+#if 0
+int main(void)
+{
+  const char str[32] = "hello";
+  // str: char[32]
+  // str -> char*
+
+  // char *strcpy(char *dst, const char *src)
+
+  const int x = 10;
+}
+#endif

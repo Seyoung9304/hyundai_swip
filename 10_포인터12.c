@@ -114,6 +114,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
   //            px
@@ -124,6 +125,96 @@ int main(void)
   printf("%d\n", *(px - 1));
   printf("%d\n", *(px + -1));
   printf("%d\n", px[-1]);
+
+  return 0;
+}
+#endif
+
+// Big Endian
+//  - [0x12 0x34 0x56 0x78] => Network
+
+// Little Endian
+//  - [0x78 0x56 0x34 0x12]
+
+#if 0
+int main(void)
+{
+  int n = 0x12345678;
+  char *p = (char *)&n;
+
+  printf("%x\n", p[0]);
+  printf("%x\n", p[1]);
+  printf("%x\n", p[2]);
+  printf("%x\n", p[3]);
+
+  return 0;
+}
+#endif
+
+#if 0
+int main(void)
+{
+  int n = 10;
+  double *p = (double *)&n;
+
+  *p = 3.14; /* 미정의 동작 */
+
+  return 0;
+}
+#endif
+
+#if 0
+int main(void)
+{
+  int x[3] = {10, 20, 30};
+
+  printf("%p\n", x);  // &x[0] -> int*
+  printf("%p\n", &x); // int(*)[3]
+
+  int *p1 = NULL;
+  int(*p2)[3] = NULL;
+
+  printf("%p\n", p1 + 1); // 4
+  printf("%p\n", p2 + 1); // 12
+
+  p1 = x;                         // &x[0]
+  printf("%zu\n", sizeof(&x[0])); // ?
+  printf("%zu\n", sizeof(x));
+
+  return 0;
+}
+#endif
+
+#if 0
+int main(void)
+{
+  int x[2][3];
+  // [ int[3] ][ int[3] ]
+  // p        p+1
+
+  int(*p)[3];
+  p = x;
+
+  return 0;
+}
+#endif
+
+int main(void)
+{
+  int a, b;
+
+  // int* p1, p2;
+  // p1: int*
+  // p2: int
+
+  // int *p1, *p2;
+  // p1: int*
+  // p2: int*
+  int *p1;
+  int *p2;
+
+  printf("%zu\n", sizeof(p1));
+  printf("%zu\n", sizeof(p2));
 
   return 0;
 }

@@ -66,6 +66,7 @@ int main(void)
 // 입력 받은 문자열을 소문자면 대문자로 변경하고, 대문자면 소문자로 변경하는
 // 프로그램을 만들어봅시다.
 
+#if 0
 int main(void)
 {
   char buf[1024];
@@ -90,6 +91,48 @@ int main(void)
         *p = *p - ('a' - 'A');
       }
       else if (*p >= '0' && *p <= '9')
+      {
+        printf("숫자\n");
+      }
+
+      p++;
+    }
+
+    printf("%s\n", buf);
+  }
+
+  printf("Program end..\n");
+
+  return 0;
+}
+#endif
+
+#include <ctype.h>
+
+int main(void)
+{
+  char buf[1024];
+
+  // 'a': 97 , 'z': 122
+  // 'A': 65 , 'Z': 90
+
+  int ret;
+  while ((ret = scanf("%s", buf)) == 1)
+  {
+    char *p = buf;
+    while (*p) /* *p != '\0' */
+    {
+      if (isupper(*p))
+      {
+        printf("대문자\n");
+        *p = tolower(*p);
+      }
+      else if (islower(*p))
+      {
+        printf("소문자\n");
+        *p = toupper(*p);
+      }
+      else if (isdigit(*p))
       {
         printf("숫자\n");
       }

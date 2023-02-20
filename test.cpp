@@ -1,6 +1,8 @@
 #include <stdio.h>
 int main(void)
 {
+  const char *s = "hello";
+
   int n = 100;
 
   void *p = &n;

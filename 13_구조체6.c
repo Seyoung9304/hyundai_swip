@@ -34,6 +34,7 @@ int main(void)
 }
 #endif
 
+#if 1
 // 깊은 복사 함수
 void copy_user(struct user *dest, const struct user *src)
 {
@@ -61,7 +62,10 @@ int main(void)
 
   printf("%s(%d)\n", user1.name, user1.age);
 
-  struct user user2 = user1;
+  // struct user user2 = user1;
+  struct user user2;
+  copy_user(&user2, &user1);
+
   printf("%s(%d)\n", user2.name, user2.age);
 
   free(user1.name);
@@ -69,3 +73,24 @@ int main(void)
 
   return 0;
 }
+#endif
+
+#if 0
+struct AAA
+{
+  int x[3];
+};
+
+int main(void)
+{
+  int x[3]; // int[3]
+  int y[3]; // int[3]
+  // x = y; /* 배열의 복사 불가능 */
+
+  struct AAA aa;
+  struct AAA bb = aa;
+
+  int *p1 = NULL;
+  int *p2 = p1; /* OK */
+}
+#endif

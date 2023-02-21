@@ -73,7 +73,7 @@ int main(void)
   inc1(x); // call by value
   printf("x: %d\n", x);
 
-  inc2(&x); // call by reference
+  inc2(&x); // call by reference / call by pointer(C++)
   printf("x: %d\n", x);
 
   return 0;

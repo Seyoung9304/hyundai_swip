@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h> // malloc, free, exit
-
 // 1. malloc은 가용한 메모리가 없을 경우, NULL을 반환합니다.
 //   => 실패 가능성이 있는 함수입니다.
 //   => 초기화되지 않은 값이 반환됩니다.
@@ -70,7 +69,7 @@ int main(void)
 }
 #endif
 
-#if 0
+#if 1
 void *AllocMatrix(int n1, int n2)
 {
   // static int x[n1][n2];
@@ -95,6 +94,7 @@ int main(void)
 }
 #endif
 
+#if 0
 // malloc은 초기화되지 않은 메모리를 반환합니다.
 // calloc은 초기화된 메모리를 반환합니다.
 //  => malloc(size_t size)
@@ -109,6 +109,25 @@ int main(void)
 
   free(p1);
   free(p2);
+
+  return 0;
+}
+#endif
+
+int foo(void)
+{
+  return 0;
+}
+
+int main(void)
+{
+  int ret = foo();
+  if (ret != 0)
+  {
+    // error handling
+  }
+
+  (void)foo(); // 함수의 결과값을 의도적으로 무시할 때 사용합니다.
 
   return 0;
 }

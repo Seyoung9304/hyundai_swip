@@ -62,7 +62,7 @@ int main(void)
 #endif
 
 // 6.
-
+#if 0
 void foo(int *px)
 {
   for (int i = 0; i < 5; i++)
@@ -73,7 +73,7 @@ void foo(int *px)
 
 // 6. 포인터 + 정수
 //   : 포인터 + 정수 * sizeof(대상체 크기)
-#if 0
+
 int main(void)
 {
   char *px = NULL;
@@ -211,6 +211,7 @@ int main(void)
   // int *p1, *p2;
   // p1: int*
   // p2: int*
+
   int *p1;
   int *p2;
 
@@ -221,7 +222,9 @@ int main(void)
 }
 #endif
 
-#if 0
+#if 1
+// int[10], int[3], int[5]
+
 void print_x(int *x, int n)
 {
   for (int i = 0; i < n; i++)
@@ -231,7 +234,10 @@ void print_x(int *x, int n)
 }
 #endif
 
-void print_x(int (*x)[3], int n) //why..?
+#if 1
+// int[3][3], int[4][3], int[10][3]
+
+void print_x(int (*x)[3], int n) //why?
 {
   for (int i = 0; i < n; i++)
   {
@@ -247,6 +253,32 @@ int main(void)
   int x[2][3] = {1, 2, 3, 4, 5, 6};
   // print_x((int *)x, 6);
   print_x(x, 2);
+
+  return 0;
+}
+
+#endif
+
+//----
+void foo(int x1) {}
+
+void goo(int *x, int n) {}
+
+int main(void)
+{
+  int x1 = 10;
+  foo(x1); // call by value
+
+  int x2[3] = {};
+  // goo(x2); // 배열의 이름은 배열의 첫번째 원소의 시작 주소로 해석된다.
+  goo(&x2[0], sizeof(x2) / sizeof(x2[0]));
+
+  // int *p = 0x10000; /* 경고지만 에러처럼 다루어져야 합니다. */
+  // int *p = 0;
+  int *p = NULL;
+
+  // char str[] = { 'h', 'e', 0 }
+  char str[] = {'h', 'e', '\0'};
 
   return 0;
 }

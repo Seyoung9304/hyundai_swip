@@ -51,7 +51,7 @@ void print_arr(int *arr)
   p = arr;
   while (*p)
   {
-    printf("%d\n", *p++);
+    printf("%d\n", *p++); // 은근히 많이 쓰는 표현. 오른쪽 ++ 부터 먼저 결합하기 때문에 잘 작동한다. 
   }
 }
 

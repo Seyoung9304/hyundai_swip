@@ -17,7 +17,7 @@
 // void foo(int x[3])
 // void foo(int x[])
 #if 0
-void foo(int *x)
+void foo(int *x) // x 배열의 첫번째 주소지 전달받음. 배열의 크기, 길이를 알 수 없다는 단점 존재
 {
   printf("%zu\n", sizeof(x));
 }
@@ -30,6 +30,16 @@ int main(void)
   foo(x);
   printf("%zu\n", sizeof(x));
 
+  return 0;
+}
+#endif
+
+#if 0
+int main(void){
+  int *p = NULL;
+  if (p){ //p가 NULL이 아닐 때 (즉, p가 유효한 주소값을 가질 때)
+    *p=10
+  }
   return 0;
 }
 #endif

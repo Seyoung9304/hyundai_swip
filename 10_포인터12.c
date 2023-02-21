@@ -231,7 +231,7 @@ void print_x(int *x, int n)
 }
 #endif
 
-void print_x(int (*x)[3], int n)
+void print_x(int (*x)[3], int n) //why..?
 {
   for (int i = 0; i < n; i++)
   {

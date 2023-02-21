@@ -66,26 +66,27 @@ struct complex
   int re;
   int im;
 };
+// C99: 구조체 멤버 초기화
 
 struct complex add(struct complex a, struct complex b)
 {
-  struct complex result;
-  result.re = a.re + b.re;
-  result.im = a.im + b.im;
+  struct complex result = {.re = a.re + b.re, .im = a.im + b.im};
+  // result.re = a.re + b.re;
+  // result.im = a.im + b.im;
 
   return result;
 }
 
 int main(void)
 {
-  struct complex a;
-  a.re = 2;
-  a.im = 3;
+  struct complex a = {.re = 2, .im = 3};
+  // a.re = 2;
+  // a.im = 3;
   // 2 + 3i
 
-  struct complex b;
-  b.re = 10;
-  b.im = 5;
+  struct complex b = {.re = 10, .im = 5};
+  // b.re = 10;
+  // b.im = 5;
   // 10 + 5i
 
   struct complex result = add(a, b);

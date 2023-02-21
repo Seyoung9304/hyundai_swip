@@ -85,7 +85,7 @@ int main(void)
   printf("result: %d\n", result);
 }
 
-#if 0
+#if 1
 int main(void)
 {
   int cmd;
@@ -95,10 +95,12 @@ int main(void)
   if (cmd == 0)
   {
     result = add(10, 20);
+    // call add
   }
   else
   {
     result = sub(10, 20);
+    // call sub
   }
 
   printf("%d\n", result);

@@ -26,3 +26,36 @@ int main(void)
   return 0;
 }
 #endif
+
+// 1.
+struct point1
+{
+  int x;
+  int y;
+};
+typedef struct point1 POINT1;
+
+// 2.
+typedef struct point2
+{
+  int x;
+  int y;
+} POINT2;
+
+// 3. 태그를 생략 가능합니다.
+typedef struct
+{
+  int x;
+  int y;
+} POINT3;
+
+int main(void)
+{
+  struct point2 pt3;
+  POINT2 pt4;
+
+  struct point1 pt1;
+  POINT1 pt2;
+
+  return 0;
+}

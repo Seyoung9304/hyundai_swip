@@ -11,6 +11,7 @@
 // int (*p)(int a, int b) : p -------> int(int, int)
 
 // 함수의 타입은 함수의 시그니처(함수의 인자 타입과 반환 타입)에 의해 결정됩니다.
+#if 0
 int add(int a, int b)
 {
   return a + b;
@@ -57,3 +58,51 @@ int main(void)
 //               (*fp): fp는 포인터입니다. 포인터가 가르키는 타입은?
 //     (*fp)(int, int): int인자 2개 받는 함수입니다. 함수의 반환타입은?
 // int (*fp)(int, int): int 입니다.
+
+#endif
+
+int add(int a, int b)
+{
+  return a + b;
+}
+
+int sub(int a, int b)
+{
+  return a - b;
+}
+
+int calc(int a, int b, int (*fp)(int, int))
+{
+  return fp(a, b);
+}
+
+int main(void)
+{
+  int cmd;
+  scanf("%d", &cmd);
+
+  int result = calc(10, 20, (cmd == 0) ? add : sub);
+  printf("result: %d\n", result);
+}
+
+#if 0
+int main(void)
+{
+  int cmd;
+  scanf("%d", &cmd);
+
+  int result;
+  if (cmd == 0)
+  {
+    result = add(10, 20);
+  }
+  else
+  {
+    result = sub(10, 20);
+  }
+
+  printf("%d\n", result);
+
+  return 0;
+}
+#endif

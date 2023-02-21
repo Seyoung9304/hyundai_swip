@@ -37,7 +37,7 @@ int main(void)
 //   정의: 함수의 결과를 반환값을 통해 전달하는 것이 아니라,
 //        함수 인자를 통해 전달합니다.
 //     "Call by reference"
-
+#if 0
 void add(int ar, int ai, int br, int bi, int *sr, int *si)
 {
   *sr = ar + br;
@@ -53,6 +53,43 @@ int main(void)
   add(ar, ai, br, bi, &sr, &si);
 
   printf("result: %d + %di", sr, si);
+
+  return 0;
+}
+#endif
+
+// 해결방법
+//  => 복소수 타입을 만들자.
+//  "데이터 캡슐화"
+struct complex
+{
+  int re;
+  int im;
+};
+
+struct complex add(struct complex a, struct complex b)
+{
+  struct complex result;
+  result.re = a.re + b.re;
+  result.im = a.im + b.im;
+
+  return result;
+}
+
+int main(void)
+{
+  struct complex a;
+  a.re = 2;
+  a.im = 3;
+  // 2 + 3i
+
+  struct complex b;
+  b.re = 10;
+  b.im = 5;
+  // 10 + 5i
+
+  struct complex result = add(a, b);
+  printf("result: %d+%di\n", result.re, result.im);
 
   return 0;
 }

@@ -63,7 +63,7 @@ int main(void)
   union data2 data2;
   data2.n = 42;
 
-  data2.f = 3.14;
+  // data2.f = 3.14;
   printf("%d\n", data2.n); // 의미 없음
   printf("%f\n", data2.f);
 

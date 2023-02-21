@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#if 0
+#if 1
 int main(void)
 {
   const int n = 10;
@@ -15,7 +15,7 @@ int main(void)
 }
 #endif
 
-#if 0
+#if 1
 // > 포인터 변수에 대한 const는
 
 //   const int *p1; - *
@@ -98,7 +98,7 @@ void swap(int *a, int *b)
 }
 
 // 포인터 변수를 다른 함수에서 다른 주소로 변경하기 위함이다.
-#if 0
+#if 1
 void pswap(int **a, int **b)
 {
   int *temp = *a;

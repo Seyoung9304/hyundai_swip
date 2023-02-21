@@ -12,7 +12,7 @@
 int main(void)
 {
   char c = 'A';
-  c = 66;
+  // c = 66;
   printf("%c\n", c);
 
   printf("%d\n", c); // 65
@@ -36,12 +36,12 @@ int main(void)
 #if 0
 int main(void)
 {
-  char str[6] = "hello"; /* 미정의 동작 */
+  char str[5] = "hello"; /* 미정의 동작 */
   // => 문자열의 마지막은 널문자로 종료되어야 합니다.
   //    문자열을 배열에 저장할 때, 널문자(1) 크기만큼이 더 필요합니다.
 
   char buf[1024];
-  printf("%s\n", buf);
+  printf("%s\n", buf); /* 미정의 동작 가능성 */
 
   return 0;
 }
@@ -53,9 +53,10 @@ int main(void)
   char str[32];
 
   // scanf는 버퍼의 크기 정보를 무시하고 입력 받기 때문에, 위험합니다.
-  // scanf("%s", str);
+  // - scanf("%s", str);
+  // - gets(str);
 
-  fgets(str, sizeof(str), stdin);
+  // fgets(str, sizeof(str), stdin); // 표준에서 안전한 문자열 입력 방법
 
   printf("str: %s\n", str);
 
@@ -107,6 +108,7 @@ int main(void)
 }
 #endif
 
+#if 1
 #include <ctype.h>
 
 int main(void)
@@ -147,3 +149,4 @@ int main(void)
 
   return 0;
 }
+#endif

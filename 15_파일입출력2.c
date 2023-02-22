@@ -35,6 +35,7 @@ int main(void)
   }
 
   printf("sum: %d\n", sum);
+  fclose(fp);
 
   return 0;
 }

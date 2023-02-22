@@ -115,7 +115,7 @@ int main(void)
 
 //  stdout: 라인 버퍼링
 // 일반 파일: 풀 버퍼링
-
+#if 0
 int main(void)
 {
   FILE *fp = fopen("a.txt", "wt"); // !
@@ -132,6 +132,18 @@ int main(void)
   }
 
   fclose(fp); // 버퍼를 비우고 파일을 닫습니다.
+
+  // while (1)
+  //   ;
+
+  return 0;
+}
+#endif
+
+int main(void)
+{
+  printf("hello");
+  fflush(stdout);
 
   while (1)
     ;

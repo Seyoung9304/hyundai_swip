@@ -21,3 +21,9 @@
 
 //------
 // C4996: scanf_s <- 비표준 확장
+
+int main(void)
+{
+  char *s = "hello";
+  char str[32] = "hello";
+}

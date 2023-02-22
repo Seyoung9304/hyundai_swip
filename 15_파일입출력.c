@@ -29,9 +29,33 @@ int main(void)
 //   => FILE*
 
 // 3) 일반 파일을 다루는 방법.
+//  FILE *fopen(const char *path, const char *mode);
+
+// 경로: path
+//  1) 절대 경로
+//    C:\\users\\aaa\\Documents\\c.txt - Windows
+//    /home/aaa/documents/c.txt        - Linux
+
+//  2) 상대 경로
+//   : 현재 작업 디렉토리
+//      . : 현재 디렉토리
+//     .. : 상위 디렉토리
+
+//  int fclose(FILE *stream);
+#include <unistd.h>
 
 int main(void)
 {
+  char buf[512];
+  printf("%s\n", getcwd(buf, sizeof buf));
+
+  FILE *fp = stdout;
+
+  int n = 10;
+  double d = 3.14;
+  const char *s = "hello";
+
+  fprintf(fp, "%d %lf %s\n", n, d, s);
 
   return 0;
 }

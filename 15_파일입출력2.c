@@ -18,6 +18,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
   FILE *fp = fopen("b.txt", "rt");
@@ -36,6 +37,38 @@ int main(void)
 
   printf("sum: %d\n", sum);
   fclose(fp);
+
+  return 0;
+}
+#endif
+
+#if 0
+int main(void)
+{
+  int n;
+
+  while (scanf("%d", &n))
+  {
+    printf("n: %d\n", n);
+  }
+
+  return 0;
+}
+#endif
+
+int main(void)
+{
+  int n;
+  char c;
+
+  // 10<엔터>
+  scanf("%d", &n);
+
+  getchar();
+
+  scanf("%c", &c);
+
+  printf("%d %c\n", n, c);
 
   return 0;
 }

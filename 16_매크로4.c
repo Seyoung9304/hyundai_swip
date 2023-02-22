@@ -13,16 +13,16 @@
 //  #ifdef / #else / #endif
 // - include guard
 
-#define _DEBUG
+// #define _DEBUG
 
 #ifdef _DEBUG
 
 #define LOG(message) \
-  fprintf(stderr, "[%s(%s:%d)]: %s\n", __FILE__, __func__, __LINE__, message);
+  fprintf(stderr, "[%s(%s:%d)]: %s\n", __FILE__, __func__, __LINE__, message)
 
 #else
 
-#define LOG(message)
+#define LOG(message) (void)0
 
 #endif
 

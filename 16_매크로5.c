@@ -86,6 +86,7 @@ int main(void) {
 }
 #endif
 
+#pragma pack(1)
 struct packet {
   char c;
   int a;
@@ -102,6 +103,7 @@ int main(void) {
   // 컴파일 타임에 조건을 확인할 수 있는 방법입니다.
 
   static_assert(sizeof(struct packet) == 5, "패킷 사이즈 확인");
+  _Static_assert(sizeof(struct packet) == 5, "패킷 사이즈 
 
   return 0;
 }

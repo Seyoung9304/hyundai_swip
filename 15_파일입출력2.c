@@ -62,9 +62,9 @@ int main(void)
   char c;
 
   // 10<엔터>
-  scanf("%d", &n);
+  scanf("%d ", &n);
 
-  getchar();
+  // getchar();
 
   scanf("%c", &c);
 

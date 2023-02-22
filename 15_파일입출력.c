@@ -31,7 +31,7 @@ int main(void)
 // 3) 일반 파일을 다루는 방법.
 //  FILE *fopen(const char *path, const char *mode);
 
-// 경로: path
+// - 경로: path
 //  1) 절대 경로
 //    C:\\users\\aaa\\Documents\\c.txt - Windows
 //    /home/aaa/documents/c.txt        - Linux
@@ -40,8 +40,18 @@ int main(void)
 //   : 현재 작업 디렉토리
 //      . : 현재 디렉토리
 //     .. : 상위 디렉토리
+//    .\\documents\\a.txt
+//    ./documents/a.txt
+
+// - 모드: mode
+//     읽기 모드: "r"
+//     쓰기 모드: "w"
+
+//     읽기 모드 + 쓰기 허용: "r+"
+//     쓰기 모드 + 읽기 허용: "w+"
 
 //  int fclose(FILE *stream);
+#if 0
 #include <unistd.h>
 
 int main(void)
@@ -56,6 +66,31 @@ int main(void)
   const char *s = "hello";
 
   fprintf(fp, "%d %lf %s\n", n, d, s);
+
+  return 0;
+}
+#endif
+
+// int errno;
+// => 연산이 실패했을 경우, 오류의 원인으로 변경됩니다.
+// extern int errno;
+
+#include <errno.h>
+#include <string.h> // strerror
+
+int main(void)
+{
+  printf("errno: %d\n", errno);
+
+  FILE *fp = fopen("aaa.txt", "r");
+  // => 읽기 모드로 열 경우, 파일이 존재하지 않으면 실패합니다.
+  if (fp == NULL)
+  {
+    // printf("file open error: %d\n", errno);
+    // fprintf(stderr, "fopen: %s\n", strerror(errno));
+    perror("fopen");
+    return 1;
+  }
 
   return 0;
 }

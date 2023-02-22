@@ -11,7 +11,7 @@
 // int (*p)(int a, int b) : p -------> int(int, int)
 
 // 함수의 타입은 함수의 시그니처(함수의 인자 타입과 반환 타입)에 의해 결정됩니다.
-#if 0
+#if 1
 int add(int a, int b)
 {
   return a + b;

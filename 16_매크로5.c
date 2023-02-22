@@ -68,14 +68,14 @@ int main(void)
 
 #ifndef NDEBUG
 // Assertion failed: (n >= 0), function main, file 16_매크로5.c, line 74.
-#define xassert(expr)                                                          \
-  do {                                                                         \
-    if (!(expr)) {                                                             \
-      fprintf(stderr, "Assert failed: (%s), function %s, file %s, line %d\n",  \
-              #expr, __func__, __FILE__, __LINE__);                            \
-      abort();                                                                 \
-    }                                                                          \
-  } while (0)
+#define xassert(expr)                                                               \
+    do {                                                                            \
+        if (!(expr)) {                                                              \
+            fprintf(stderr, "Assert failed: (%s), function %s, file %s, line %d\n", \
+                #expr, __func__, __FILE__, __LINE__);                               \
+            abort();                                                                \
+        }                                                                           \
+    } while (0)
 #else
 #define xassert(expr) (void)0
 #endif
@@ -88,8 +88,8 @@ int main(void) {
 
 #pragma pack(1)
 struct packet {
-  char c;
-  int a;
+    char c;
+    int a;
 };
 
 // #define STATIC_ASSERT(expr) typedef int arr[(expr) ? 1 : -1]
@@ -97,18 +97,19 @@ struct packet {
 #define CONCAT_IMPL(a, b) a##b
 #define CONCAT(a, b) CONCAT_IMPL(a, b)
 
-#define STATIC_ASSERT(expr)                                                    \
-  typedef int CONCAT(static_assertion_failed, __LINE__)[(expr) ? 1 : -1]
+#define STATIC_ASSERT(expr) \
+    typedef int CONCAT(static_assertion_failed, __LINE__)[(expr) ? 1 : -1]
 
-int main(void) {
-  printf("program start\n");
-  // assert(sizeof(struct packet) == 5);
+int main(void)
+{
+    printf("program start\n");
+    // assert(sizeof(struct packet) == 5);
 
-  // STATIC_ASSERT(sizeof(struct packet) == 8);
-  // 컴파일 타임에 조건을 확인할 수 있는 방법입니다.
+    // STATIC_ASSERT(sizeof(struct packet) == 8);
+    // 컴파일 타임에 조건을 확인할 수 있는 방법입니다.
 
-  static_assert(sizeof(struct packet) == 5, "패킷 사이즈 확인");
-  _Static_assert(sizeof(struct packet) == 5, "패킷 사이즈 
+    static_assert(sizeof(struct packet) == 5, "패킷 사이즈 확인");
+    _Static_assert(sizeof(struct packet) == 5, "패킷 사이즈");
 
-  return 0;
+    return 0;
 }

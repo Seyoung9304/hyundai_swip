@@ -96,13 +96,13 @@ void sort(void *x, int n, size_t width,
   }
 }
 //----------
-
 int cmp(const void *a, const void *b)
 {
   double ia = *(const double *)a;
   double ib = *(const double *)b;
   // return ia - ib;
-  return ia < ib ? -1 : 1;
+  // return ia < ib ? -1 : 1;
+  return ia < ib ? 1 : -1;
 }
 
 #include <stdlib.h> // qsort

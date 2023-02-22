@@ -74,7 +74,7 @@ int cmp2(int a, int b)
 int main(void)
 {
   int x[10] = {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
-  sort(x, 10, cmp2);
+  sort(x, 10, cmp1);
 
   for (int i = 0; i < 10; i++)
   {

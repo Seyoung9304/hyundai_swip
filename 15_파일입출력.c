@@ -45,10 +45,20 @@ int main(void)
 
 // - 모드: mode
 //     읽기 모드: "r"
+//      : 파일이 존재하지 않으면, 오류
 //     쓰기 모드: "w"
+//      : 파일이 존재하지 않으면, 새로운 파일을 생성하고,
+//        파일이 존재하면, 파일의 크기를 0으로 바꿉니다.
+///    추가 모드: "a"
+//      : 파일이 존재하지 않으면, 새로운 파일을 생성하고,
+//        파일이 존재하면, 파일의 마지막에 새로운 내용이 추가됩니다.
 
 //     읽기 모드 + 쓰기 허용: "r+"
 //     쓰기 모드 + 읽기 허용: "w+"
+
+//   Windows는 모드 한정자가 필요합니다.
+//    "t": TEXT 모드
+//    "b": 바이너리 모드
 
 //  int fclose(FILE *stream);
 #if 0
@@ -71,6 +81,7 @@ int main(void)
 }
 #endif
 
+#if 0
 // int errno;
 // => 연산이 실패했을 경우, 오류의 원인으로 변경됩니다.
 // extern int errno;
@@ -82,8 +93,14 @@ int main(void)
 {
   printf("errno: %d\n", errno);
 
-  FILE *fp = fopen("aaa.txt", "r");
+  // FILE *fp = fopen("aaa.txt", "r");
   // => 읽기 모드로 열 경우, 파일이 존재하지 않으면 실패합니다.
+
+  FILE *fp = fopen("aaa.txt", "w");
+  // => 쓰기 모드로 열 경우, 파일이 존재하지 않으면, 새로운 파일을
+  //    생성합니다.
+  //    파일이 존재할 경우, 파일의 크기를 0으로 바꿉니다.
+
   if (fp == NULL)
   {
     // printf("file open error: %d\n", errno);
@@ -91,6 +108,33 @@ int main(void)
     perror("fopen");
     return 1;
   }
+
+  return 0;
+}
+#endif
+
+//  stdout: 라인 버퍼링
+// 일반 파일: 풀 버퍼링
+
+int main(void)
+{
+  FILE *fp = fopen("a.txt", "wt"); // !
+  if (fp == NULL)
+  {
+    perror("fopen");
+    return 1;
+  }
+
+  for (int i = 0; i < 10; i++)
+  {
+    fprintf(fp, "hello\n");
+    // fflush(fp); // 버퍼를 비웁니다.
+  }
+
+  fclose(fp); // 버퍼를 비우고 파일을 닫습니다.
+
+  while (1)
+    ;
 
   return 0;
 }

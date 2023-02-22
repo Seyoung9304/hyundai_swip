@@ -94,6 +94,11 @@ struct packet {
 
 // #define STATIC_ASSERT(expr) typedef int arr[(expr) ? 1 : -1]
 // C11
+#define CONCAT_IMPL(a, b) a##b
+#define CONCAT(a, b) CONCAT_IMPL(a, b)
+
+#define STATIC_ASSERT(expr)                                                    \
+  typedef int CONCAT(static_assertion_failed, __LINE__)[(expr) ? 1 : -1]
 
 int main(void) {
   printf("program start\n");

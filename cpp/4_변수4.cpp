@@ -36,7 +36,7 @@ int main()
 {
     int x[3] = { 10, 20, 30 };
 
-    int* p = x;
+    int p = x;
     int e = *x;
 }
 #endif

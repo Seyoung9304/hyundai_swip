@@ -6,3 +6,4 @@ a.out
 .vscode
 .dist
 *.json
+~$*.pptx

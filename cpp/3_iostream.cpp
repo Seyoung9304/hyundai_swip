@@ -33,8 +33,8 @@ int main()
     // C++11에서 2진 상수 표현 문법이 도입되었습니다.
     //  => 작은 따옴표를 통해 가독성을 높일 수 있습니다.
     int n = 0b1'111'1010'111110'10;
-    printf("%x\n", n);
-    printf("%X\n", n);
+    printf("%x\n", n); 
+    printf("%X\n", n); //대문자로 출력
 
     cout << hex << n << endl;
     cout << hex << uppercase << n << endl;
@@ -46,5 +46,5 @@ int main()
 
     // IO 조정자
     //   : hex, uppercase, dec
-    //     setfill, setw => iomanip
+    //     setfill, setw => iomanip 헤더 추가
 }

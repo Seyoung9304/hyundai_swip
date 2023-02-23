@@ -8,6 +8,9 @@
 #include <cstdlib>
 #include <cstring>
 
+using std::printf; /* OK */
+using namespace std; /* 비권장 */
+
 int main()
 {
     std::printf("Hello, C++\n");

@@ -3,3 +3,6 @@ a.out
 .DS_Store
 *.txt
 ~$230216.pptx
+.vscode
+.dist
+*.json

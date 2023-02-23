@@ -9,6 +9,15 @@ using namespace std;
 //      번역합니다.
 //       "네임 맹글링(name mangling)"
 
+//  > extern "C"
+//   C++의 키워드입니다.
+//   함수를 C의 형태로 만듭니다.
+// C++:              void foo(int a)   ==> __Z3fooi
+//      extern "C"   void foo(int a)   ==> _foo
+//   : 네임 맹글링을 하지 않기 때문에, C에서 호출이 가능합니다.
+//     C++에서 C에서 호출되는 함수를 제공할 수 있습니다.
+//     - 오버로딩은 불가능합니다.
+
 int square(int x) { return x * x; }
 double square(double x) { return x * x; }
 

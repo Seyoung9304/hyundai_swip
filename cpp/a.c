@@ -2,7 +2,8 @@
 
 int global = 0;
 
-void foo(double n) { }
+// C의 인라인 함수
+static inline void foo(double n) { }
 
 int main()
 {

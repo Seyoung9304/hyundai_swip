@@ -1,11 +1,11 @@
 // main.c
 #include <stdio.h>
 
-extern int add(int a, int b);
+extern int _Z3addii(int a, int b);
 
 int main(void)
 {
-    int result = add(10, 20);
+    int result = _Z3addii(10, 20);
     printf("result: %d\n", result);
 
     return 0;

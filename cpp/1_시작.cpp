@@ -33,8 +33,9 @@ int main()
 // C++의 표준 입출력 헤더파일 입니다.
 //  Input Output Stream
 
-// 표준 출력: std::cout -> stdout
 // 표준 입력: std::cin  -> stdin
+// 표준 출력: std::cout -> stdout
+// 표준 에러: std::cerr -> stderr
 #if 0
 int main()
 {
@@ -53,12 +54,23 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     double n;
     // scanf("%d", &n);
     // printf("%d\n", n);
 
+    // - 주소를 전달하지 않았음에도, 값이 변경된다.
     std::cin >> n;
     std::cout << n << std::endl;
+}
+#endif
+
+int main()
+{
+    std::cerr << "hello";
+
+    while (1)
+        ;
 }

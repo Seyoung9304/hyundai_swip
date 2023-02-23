@@ -14,5 +14,5 @@ int main()
     // auto ac = c; // ac: int
 
     const auto ac = c; // ac: const int
-    ac = 42; /* compile error */
+    // ac = 42; /* compile error */
 }

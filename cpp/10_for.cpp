@@ -18,12 +18,12 @@ int main()
         cout << e << endl;
     }
 
-    char str[] = "hello";
+    char str[] = "hello"; // NULL까지 순회
     for (auto e : str) {
         cout << "str1: " << e << endl;
     }
 
-    string str2 = "world";
+    string str2 = "world"; // NULL 순회 안함
     for (auto e : str2) {
         cout << "str2: " << e << endl;
     }

@@ -59,6 +59,7 @@ int main()
 {
     switch (int state = GetState(); state) {
     case TASK_RUNNING:
+        printf("%d\n", state);
         break;
 
     case TASK_STOPPED:

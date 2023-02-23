@@ -9,6 +9,7 @@
 //     없기 때문에, 이름규칙을 약속해야합니다.
 //  2. C++은 이름 충돌을 해결하기 위해
 //     namespace를 약속합니다.
+//  3. 표준의 모든 요소는 std 이름 공간으로 약속되어 있습니다.
 
 // 효과
 //  1) 이름 충돌 해결
@@ -25,6 +26,8 @@ namespace mp4 {
     void play() { }
 }
 
+int count = 100;
+
 };
 
 // b.cpp
@@ -39,4 +42,7 @@ int main()
 
     audio::mp3::play();
     audio::mp4::play();
+
+    audio::count = 42;
+    std::cout << audio::count << std::endl;
 }

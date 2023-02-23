@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+#if 0
 // 최대 공약수
 //  => 아래 함수는 정수를 대상으로하는 함수입니다.
 int gcd(int a, int b)
@@ -26,4 +27,19 @@ int main()
 {
     cout << gcd(15, 30) << endl;
     // cout << gcd(3.14, 2.5) << endl; /* 컴파일 오류 */
+}
+#endif
+
+template <typename T>
+inline T square(T a)
+{
+    return a * a;
+}
+
+inline double square(double a) = delete;
+
+int main()
+{
+    square(10); // square<int>
+    // square(3.14); // square<double>
 }

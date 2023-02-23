@@ -15,6 +15,7 @@
 // 4. C++은 C언어를 지원합니다.
 //  => C의 표준과 C++에서의 C의 표준은 다릅니다.
 
+#if 0
 #include <stdio.h>
 
 void foo() { }
@@ -25,3 +26,14 @@ int main()
 }
 // main 함수의 return 구문을 생략하면,
 // 컴파일러가 자동으로 return 0; 처리합니다.
+#endif
+
+// 5. C++은 표준 입출력 라이브러리가 있습니다.
+#include <iostream>
+// C++의 표준 입출력 헤더파일 입니다.
+//  Input Output Stream
+
+int main()
+{
+    std::cout << "Hello, C++" << std::endl;
+}

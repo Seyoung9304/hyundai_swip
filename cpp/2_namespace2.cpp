@@ -37,7 +37,7 @@ int main()
 }
 #endif
 
-#if 1
+#if 0
 // 3) using 지시어(directive)
 //  : 이름 공간안에 있는 모든 요소를 암묵적으로 접근할 수 있습니다.
 //  > 이름 충돌 문제가 발생할 가능성이 높습니다.
@@ -52,3 +52,18 @@ int main()
     cout << "Hello, C++" << endl;
 }
 #endif
+
+namespace aaa {
+void goo() { }
+}
+
+void foo()
+{
+    using namespace aaa; // 선언의 스코프를 지역으로 제한할 수 있다.
+    goo();
+}
+
+int main()
+{
+    aaa::goo();
+}

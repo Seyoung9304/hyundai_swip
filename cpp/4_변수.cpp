@@ -51,8 +51,12 @@ enum task_state {
     TASK_STOPPED
 };
 
+struct User { };
+
 int main()
 {
+    User u1;
+
     struct complex c;
     union my_data d;
     enum task_state s;

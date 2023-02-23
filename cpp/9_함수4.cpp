@@ -29,12 +29,21 @@ int main()
 //  => 작은 코드를 가진 함수에서 인라인 함수가 유용합니다.
 //     - 코드 메모리 사용량을 최적화할 수 있습니다.
 
-int add1(int a, int b)
+// 4. C도 인라인 함수 문법이 존재합니다. - c99
+
+// add.h
+extern int add1(int a, int b);
+
+// - 인라인 함수는 컴파일 타임에 기계어 치환이 수행되어야 하므로,
+//   함수의 구현이 헤더파일을 통해서 제공되어야 합니다.
+// - 인라인 함수는 내부 연결을 갖습니다.
+inline int add2(int a, int b)
 {
     return a + b;
 }
 
-inline int add2(int a, int b)
+// add.c
+int add1(int a, int b)
 {
     return a + b;
 }

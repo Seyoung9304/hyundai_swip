@@ -10,6 +10,33 @@
 //  2. C++은 이름 충돌을 해결하기 위해
 //     namespace를 약속합니다.
 
+// 효과
+//  1) 이름 충돌 해결
+//  2) 프로그램의 각 요소를 관련된 요소끼리 그룹화할 수 있습니다.
+
+// a.cpp
+namespace audio {
+void init() { std::cout << "audio init" << std::endl; }
+
+namespace mp3 {
+    void play() { }
+}
+namespace mp4 {
+    void play() { }
+}
+
+};
+
+// b.cpp
+namespace video {
+void init() { std::cout << "video init" << std::endl; }
+}
+
 int main()
 {
+    audio::init();
+    video::init();
+
+    audio::mp3::play();
+    audio::mp4::play();
 }

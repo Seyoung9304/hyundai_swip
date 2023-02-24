@@ -69,7 +69,9 @@ struct Point {
 
 int main()
 {
-    int* p = new int;
+    int* p;
+
+    p = new int;
     cout << *p << endl; // 쓰레기값
     *p = 10;
     delete p;

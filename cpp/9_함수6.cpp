@@ -10,10 +10,7 @@ int gcd(int a, int b)
     return b != 0 ? gcd(b, a % b) : a;
 }
 
-double gcd(double a, double b)
-{
-    // 런타임 오류
-}
+// double gcd(double a, double b);
 // 1. 구현을 하지 않고, 선언만 제공합니다.
 //  => 링크 오류 유도
 /*
@@ -33,16 +30,16 @@ int main()
 }
 #endif
 
-template <typename T>
-inline T square(T a)
-{
-    return a * a;
-}
+// template <typename T>
+// inline T square(T a)
+// {
+//     return a * a;
+// }
 
-inline double square(double a) = delete;
+// inline double square(double a) = delete;
 
-int main()
-{
-    square(10); // square<int>
-    // square(3.14); // square<double>
-}
+// int main()
+// {
+//     square(10); // square<int>
+//     // square(3.14); // square<double>
+// }

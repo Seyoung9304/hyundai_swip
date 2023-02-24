@@ -7,6 +7,8 @@ using namespace std;
 //    LIFO(Last In First Out)
 
 // 1. 전역 변수 + 전역 함수
+//  => 스택을 여러개 만들기 어렵습니다.
+
 int buff[10];
 int top = 0;
 

@@ -7,3 +7,7 @@ int audio_count = 0;
 void audio_init(void)
 {
 }
+
+// audio_init_foo()
+// audioInitFoo()
+// HyAudioInitFoo()

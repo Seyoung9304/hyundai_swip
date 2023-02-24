@@ -27,7 +27,7 @@ public:
     ~Stack()
     {
         cout << "~Stack()" << endl;
-        delete[] buff;
+        delete[] buff;  // 연속된 메모리의 삭제 시 [] 주의!
     }
 
     Stack(int sz = 10)

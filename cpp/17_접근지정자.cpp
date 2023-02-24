@@ -12,7 +12,7 @@ using namespace std;
 // 3. friend
 //    - 클래스에서 friend로 선언된 함수나 클래스는
 //      자신의 private 멤버에 접근이 가능합니다.
-
+#if 0
 class User {
 private:
     string name;
@@ -76,3 +76,27 @@ int main()
     b.b = 10; /* NO */
 }
 #endif
+#endif
+
+class AAA {
+    int n;
+
+public:
+    AAA(int a)
+    {
+        n = a;
+    }
+
+    void foo(AAA* p)
+    {
+        cout << p->n << endl;
+    }
+};
+
+int main()
+{
+    AAA a(10), b(20);
+
+    a.foo(&b);
+    b.foo(&a);
+}

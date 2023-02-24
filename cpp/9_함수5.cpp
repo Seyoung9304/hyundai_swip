@@ -58,7 +58,7 @@ inline TYPE square(TYPE x)
 int main()
 {
     // 명시적인 타입 지정
-    cout << square<long>(10) << endl; // square<int>(10);
+    cout << square<long>(10) << endl; // square<long>(10);
 
     // 암묵적인 타입 추론
     cout << square(3.14) << endl; // square<double>(3.14);

@@ -6,6 +6,10 @@
 #include <iostream>
 using namespace std;
 
+// void goo() { }
+// int goo() { }
+// 함수의 반환타입만 다를경우, 오버로딩은 허용되지 않습니다.
+
 void foo(int n = 100) { cout << n << endl; }
 void foo() { cout << "v" << endl; }
 

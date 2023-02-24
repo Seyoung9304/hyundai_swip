@@ -5,6 +5,9 @@ using namespace std;
 // 클래스도 템플릿으로 만들 수 있습니다.
 
 // 클래스 템플릿
+// => 헤더를 통해서 구현도 같이 제공되어야 합니다.
+// Stack.h + Stack.cpp => Stack.hpp
+
 template <typename TYPE>
 class Stack {
 private:
@@ -37,8 +40,15 @@ public:
     }
 };
 
+#include <string>
+
 int main()
 {
+    Stack<string> s3;
+    s3.push("hello");
+
+    cout << s3.pop() << endl;
+
     // 클래스 템플릿은 명시적으로 타입을 지정해야 합니다.
     Stack<int> s1;
     Stack<double> s2;

@@ -21,6 +21,15 @@ using namespace std;
 int square(int x) { return x * x; }
 double square(double x) { return x * x; }
 
+// "다형성"
+//  squarei
+//  squared
+//  squaref
+
+// square -> square(int)
+//           sqaure(double)
+//           square(float)
+
 int main()
 {
     cout << square(10) << endl;

@@ -22,12 +22,13 @@ using namespace std;
 int main()
 {
     // 컴파일 상수
-    constexpr int c1 = 42;
+    constexpr int c1 = 42; // const int
 
     // 런타임 상수
     int n;
     cin >> n;
     const int c2 = n;
+    // constexpr int c2 = n; /* 컴파일 오류 */
 
     printf("%d\n", c1);
     printf("%d\n", c2);

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#if 0
+#if 1
 // 최대 공약수
 //  => 아래 함수는 정수를 대상으로하는 함수입니다.
 int gcd(int a, int b)
@@ -10,7 +10,10 @@ int gcd(int a, int b)
     return b != 0 ? gcd(b, a % b) : a;
 }
 
-// double gcd(double a, double b);
+double gcd(double a, double b)
+{
+    // 런타임 오류
+}
 // 1. 구현을 하지 않고, 선언만 제공합니다.
 //  => 링크 오류 유도
 /*

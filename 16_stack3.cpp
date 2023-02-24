@@ -12,9 +12,11 @@ using namespace std;
 //   => 객체(object)
 
 struct Stack {
+    // 멤버 데이터(속성)
     int buff[10];
     int top;
 
+    // 멤버 함수(메소드)
     void init()
     {
         top = 0;

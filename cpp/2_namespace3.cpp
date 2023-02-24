@@ -25,9 +25,14 @@ int main()
     std::printf("Hello, C++\n");
 }
 #endif
+
+// 이름없는 이름공간: Internal Linkage
+namespace {
 void foo()
 {
     std::cout << "foo" << std::endl;
+}
+
 }
 
 namespace hello {

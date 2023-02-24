@@ -4,7 +4,7 @@ using namespace std;
 
 // C++ 에서는 레퍼런스 타입이 존재합니다.
 // => 기존 메모리에 새로운 이름(별명)을 부여합니다.
-#if 1
+#if 0
 int main()
 {
     int n = 100;

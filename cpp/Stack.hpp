@@ -11,14 +11,11 @@ private:
 public:
     ~Stack()
     {
-        cout << "~Stack()" << endl;
         delete[] buff;
     }
 
     Stack(int sz = 10)
     {
-        cout << "Stack()" << endl;
-
         top = 0;
         buff = new TYPE[sz];
     }

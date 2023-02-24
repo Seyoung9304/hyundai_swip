@@ -6,7 +6,12 @@ using namespace std;
 void inc1(int x) { ++x; }
 
 // call by pointer
-void inc2(int* p) { ++(*p); }
+void inc2(int* p)
+{
+    if (p) {
+        ++(*p);
+    }
+}
 
 // call by reference
 void inc3(int& r) { ++r; }

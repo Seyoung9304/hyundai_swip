@@ -27,7 +27,14 @@ auto add2(int a, int b) -> decltype(a + b) /* OK */
     return a + b;
 }
 
+// 반환타입을 명시하지 않아도 됩니다. => 반환타입 추론
+auto add3(int a, int b)
+{
+    return a + b;
+}
+
 int main()
 {
+    cout << add3(10, 20) << endl;
     cout << add(10, 20) << endl;
 }

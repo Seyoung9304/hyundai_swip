@@ -33,9 +33,9 @@ int main()
 // C++의 표준 입출력 헤더파일 입니다.
 //  Input Output Stream
 
-// 표준 입력: std::cin  -> stdin
-// 표준 출력: std::cout -> stdout
-// 표준 에러: std::cerr -> stderr
+// 표준 입력 객체: cin  -> stdin
+// 표준 출력 객체: cout -> stdout
+// 표준 에러 객체: cerr -> stderr
 #if 0
 int main()
 {

@@ -37,8 +37,15 @@ public:
     }
 };
 
+#include <string>
+
 int main()
 {
+    Stack<string> s3;
+    s3.push("hello");
+
+    cout << s3.pop() << endl;
+
     // 클래스 템플릿은 명시적으로 타입을 지정해야 합니다.
     Stack<int> s1;
     Stack<double> s2;

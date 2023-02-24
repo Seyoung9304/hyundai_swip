@@ -24,7 +24,7 @@ using namespace std;
 //   - 연속된 메모리를 해지할 경우, 반드시 delete[]를 사용해야 합니다.
 //    int* p = new int[10];
 //    delete[] p;
-
+#if 0
 int main()
 {
     int* p1 = static_cast<int*>(malloc(sizeof(int)));
@@ -43,4 +43,56 @@ int main()
     delete[] p2;
 
     // delete p2; /* 미정의 동작 */
+}
+#endif
+
+#if 0
+int main()
+{
+    int n;
+    cin >> n;
+
+    int* p = new int[n];
+    for (int i = 0; i < n; ++i) {
+        p[i] = i + 1;
+        cout << p[i] << endl;
+    }
+
+    delete[] p;
+}
+#endif
+
+struct Point {
+    int x;
+    int y;
+};
+
+int main()
+{
+    int* p = new int;
+    cout << *p << endl; // 쓰레기값
+    *p = 10;
+    delete p;
+
+    int n(42);
+    cout << n << endl;
+
+    p = new int(42);
+    cout << *p << endl;
+    delete p;
+
+    p = new int { 42 };
+    cout << *p << endl;
+    delete p;
+
+    p = new int[3] { 10, 20, 30 };
+    cout << p[0] << endl;
+    cout << p[1] << endl;
+    cout << p[2] << endl;
+    delete[] p;
+
+    Point* pt = new Point { 10, 20 };
+    cout << pt->x << endl;
+    cout << pt->y << endl;
+    delete pt;
 }

@@ -44,7 +44,7 @@ int main()
     printf("%010d\n", n);
     cout << setw(10) << setfill('0') << n << endl;
 
-    // IO 조정자
+    // IO 조정자(조작자, manipulator)
     //   : hex, uppercase, dec
     //     setfill, setw => iomanip
 }

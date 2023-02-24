@@ -4,6 +4,7 @@ using namespace std;
 
 // auto
 // => 우항의 표현식을 통해 타입을 추론합니다.
+//   "const, &" <- auto에 포함되지 않습니다.
 
 // decltype
 // => 지정된 타입과 동일한 타입으로 변수를 생성할 수 있습니다.

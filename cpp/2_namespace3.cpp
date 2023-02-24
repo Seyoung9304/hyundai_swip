@@ -13,6 +13,7 @@ namespace std {
 
 #endif
 
+#if 0
 #include <cstdlib>
 #include <cstring>
 
@@ -23,3 +24,37 @@ int main()
 {
     std::printf("Hello, C++\n");
 }
+#endif
+
+// 이름없는 이름공간: Internal Linkage
+namespace {
+void foo()
+{
+    std::cout << "foo" << std::endl;
+}
+
+}
+
+namespace hello {
+void foo()
+{
+    std::cout << "hello foo" << std::endl;
+    // foo();
+    // 같은 이름 공간안의 foo를 우선 호출합니다.
+
+    ::foo();
+    // 전역 공간의 함수를 명시적으로 호출합니다.
+}
+}
+
+int main()
+{
+    hello::foo();
+    foo();
+}
+
+// Effective C++ 시리즈 => 스콧 마이어스
+//  - Effective C++      - *  98/03
+//  - More Effective C++
+//  - Effective STL
+//  - Effective Modern C++ - * 11/14

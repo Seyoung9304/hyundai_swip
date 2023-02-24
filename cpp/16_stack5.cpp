@@ -3,6 +3,10 @@
 using namespace std;
 
 // 문제점
+// > 사용자가 원하는 크기의 스택을 생성하고 싶습니다.
+
+// 해결방법
+// >
 
 class Stack {
 private:
@@ -30,6 +34,7 @@ public:
     }
 };
 
+#if 0
 Stack s1;
 int main()
 {
@@ -43,6 +48,7 @@ int main()
     s2.push(30);
     cout << s2.pop() << endl;
 }
+#endif
 
 #if 0
 Stack s2;

@@ -52,3 +52,9 @@ int main()
     hello::foo();
     foo();
 }
+
+// Effective C++ 시리즈 => 스콧 마이어스
+//  - Effective C++      - *  98/03
+//  - More Effective C++
+//  - Effective STL
+//  - Effective Modern C++ - * 11/14

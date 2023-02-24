@@ -4,7 +4,6 @@ using namespace std;
 
 // 이미 C++의 표준 라이브러리에 스택이 있습니다.
 //  : STL(Standard Template Library)
-
 #include <stack>
 
 int main()

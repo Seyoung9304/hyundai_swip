@@ -20,7 +20,6 @@ using namespace std;
 // a = 3;
 // b = a; /* OK */
 // 3 = b; /* NO */
-
 void foo(const int& r)
 {
     cout << "const&" << endl;

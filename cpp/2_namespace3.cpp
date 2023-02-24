@@ -5,6 +5,14 @@
 
 // #include <stdio.h>
 #include <cstdio>
+
+#if 0
+namespace std {
+#include <stdio.h>
+}
+
+#endif
+
 #include <cstdlib>
 #include <cstring>
 

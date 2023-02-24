@@ -1,15 +1,21 @@
-// 16_stack5.cpp
+// 16_stack6.cpp
 #include <iostream>
 using namespace std;
 
 // 문제점
-// > 사용자가 원하는 크기의 스택을 생성하고 싶습니다.
+// - 객체 내부에서 new한 메모리는 객체가 파괴되기 전에, delete 되어야
+//   합니다.
 
-// 해결방법
-// > 생성자는 인자를 통해, 값을 전달받을 수 있습니다.
-//   생성자는 오버로딩을 통해, 다양한 생성자를 제공할 수 있습니다.
+// 해결 방법
+// > 객체가 메모리에서 해지되기 전에 호출되는 약속된 멤버 함수가 있습니다.
+// => 소멸자(Destructor) 함수
+//  - 객체 내부에서 해지해야 하는 자원(메모리, 파일 ..)이 존재하는 경우,
+//    소멸자를 통해 반드시 정리해야 합니다.
 
-//  "객체를 생성하는 다양한 방법을 제공할 수 있습니다."
+// 소멸자
+//  - ~클래스 이름입니다.
+//  - 반환 타입도 없고, 반환값도 없습니다.
+//  - 인자도 없습니다. 오버로딩도 불가능하고, 오직 1개만 제공할 수 있습니다.
 
 class Stack {
 private:
@@ -18,10 +24,16 @@ private:
     int top;
 
 public:
-    // 불필요한 오버로딩을 제거할 수 있습니다.
-    //  => 파라미터 기본값
+    ~Stack()
+    {
+        cout << "~Stack()" << endl;
+        delete[] buff;
+    }
+
     Stack(int sz = 10)
     {
+        cout << "Stack()" << endl;
+
         top = 0;
         buff = new int[sz];
     }
@@ -40,6 +52,7 @@ public:
 Stack s1;
 int main()
 {
+    cout << "main" << endl;
     Stack s2(32);
 
     s1.push(10);
@@ -49,6 +62,8 @@ int main()
 
     s2.push(30);
     cout << s2.pop() << endl;
+
+    cout << "main end" << endl;
 }
 
 #if 0

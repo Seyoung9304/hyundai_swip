@@ -31,6 +31,15 @@ public:
 
     // 캡슐화의 정책을 깨뜨리지 않고, 캡슐화의 경계를 확장할 수 있습니다.
     friend void PrintUser(User user);
+    friend class UserPrinter;
+};
+
+class UserPrinter {
+public:
+    void PrintUser(User user)
+    {
+        cout << user.name << ", " << user.age << endl;
+    }
 };
 
 void PrintUser(User user)
@@ -44,6 +53,9 @@ int main()
 {
     User user("Tom", 42);
     PrintUser(user);
+
+    UserPrinter printer;
+    printer.PrintUser(user);
 }
 
 #if 0

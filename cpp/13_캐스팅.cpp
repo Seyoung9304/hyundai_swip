@@ -67,6 +67,10 @@ int main()
 //   : 메모리 재해석 용도로 사용합니다.
 //   "위험한 캐스팅에서 사용하는 캐스팅 연산자입니다."
 
+// 3. const_cast
+//   : 메모리의 상수성(const)를 제거해서, 타입의 불일치 문제를 해결할 때
+//     사용합니다.
+
 int main()
 {
     // int* p = (int*)malloc(sizeof(int) * 10);
@@ -90,7 +94,18 @@ int main()
 
     double* p3 = reinterpret_cast<double*>(&x);
     // *p3 = 3.14; /* 미정의 동작 */
+
+    //----
+    char str1[] = "hello";
+    foo(str1);
+
+    // const char* -> char*
+    //  : 값을 수정하기 위함이 아니라, 타입의 불일치 문제를
+    //    해결하기 위해서, 명시적인 캐스팅이 필요합니다.
+    const char* str2 = "hello";
+    // foo(static_cast<char*>(str2)); // const char* ---> char*
+    // foo(reinterpret_cast<char*>(str2));
+    foo(const_cast<char*>(str2));
 }
 
-// 3. const_cast
 // 4. dynamic_cast

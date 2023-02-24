@@ -1,6 +1,7 @@
 // Stack.cpp
 #include "Stack.h"
 
+#if 0
 Stack::~Stack()
 {
     delete[] buff;
@@ -21,3 +22,4 @@ int Stack::pop()
 {
     return buff[--top];
 }
+#endif

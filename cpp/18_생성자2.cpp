@@ -4,14 +4,6 @@ using namespace std;
 
 #include <cstdlib>
 
-class Point {
-public:
-    Point() { cout << "Point()" << endl; }
-    Point(int a, int b) { cout << "Point(int, int)" << endl; }
-
-    ~Point() { cout << "~Point()" << endl; }
-};
-
 // 1. malloc을 통해서 객체를 생성하면,
 //    생성자가 호출되지 않습니다.
 // 2. new를 통해서 객체를 생성하면, 생성자가 호출됩니다.
@@ -26,6 +18,31 @@ public:
 // 1) 소멸자 호출
 // 2) 동적 메모리 해지
 
+class Point {
+public:
+    Point() { cout << "Point()" << endl; }
+    Point(int a, int b) { cout << "Point(int, int)" << endl; }
+
+    ~Point() { cout << "~Point()" << endl; }
+};
+
+int main()
+{
+    // Point* p1 = new Point; // Point::Point();
+    // Point* p2 = new Point(); // Point::Point();
+
+    // Point* p3 = new Point(10, 20); // Point::Point(int, int)
+    // Point* p4 = new Point { 10, 20 }; // Point::Point(int, int)
+
+    // Point* p5 = new Point[3];
+    Point* p5 = new Point[3] {
+        { 10, 20 },
+        {},
+        { 20, 30 },
+    };
+}
+
+#if 0
 int main()
 {
     Point* p1 = static_cast<Point*>(malloc(sizeof(Point)));
@@ -34,3 +51,4 @@ int main()
     Point* p2 = new Point;
     delete p2;
 }
+#endif

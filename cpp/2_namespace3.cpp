@@ -13,6 +13,7 @@ namespace std {
 
 #endif
 
+#if 0
 #include <cstdlib>
 #include <cstring>
 
@@ -22,4 +23,27 @@ using namespace std; /* 비권장 */
 int main()
 {
     std::printf("Hello, C++\n");
+}
+#endif
+void foo()
+{
+    std::cout << "foo" << std::endl;
+}
+
+namespace hello {
+void foo()
+{
+    std::cout << "hello foo" << std::endl;
+    // foo();
+    // 같은 이름 공간안의 foo를 우선 호출합니다.
+
+    ::foo();
+    // 전역 공간의 함수를 명시적으로 호출합니다.
+}
+}
+
+int main()
+{
+    hello::foo();
+    foo();
 }

@@ -1,12 +1,13 @@
 // Stack.cpp
 #include "Stack.h"
 
+#if 0
 Stack::~Stack()
 {
     delete[] buff;
 }
 
-Stack::Stack(int sz = 10)
+Stack::Stack(int sz)
 {
     top = 0;
     buff = new int[sz];
@@ -21,3 +22,4 @@ int Stack::pop()
 {
     return buff[--top];
 }
+#endif

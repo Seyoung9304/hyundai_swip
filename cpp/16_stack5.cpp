@@ -14,18 +14,18 @@ using namespace std;
 class Stack {
 private:
     // 멤버 데이터(속성)
-    int buff[10];
+    int* buff;
     int top;
 
 public:
-    // 생성자 함수
-    Stack()
+    // 불필요한 오버로딩을 제거할 수 있습니다.
+    //  => 파라미터 기본값
+    Stack(int sz = 10)
     {
-        cout << "Stack()" << endl;
         top = 0;
+        buff = new int[sz];
     }
 
-    // 멤버 함수(메소드)
     void push(int n)
     {
         buff[top++] = n;
@@ -37,6 +37,21 @@ public:
     }
 };
 
+Stack s1;
+int main()
+{
+    Stack s2(32);
+
+    s1.push(10);
+    s1.push(20);
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+
+    s2.push(30);
+    cout << s2.pop() << endl;
+}
+
+#if 0
 class Sample {
 public:
     Sample() { cout << "Sample()" << endl; }
@@ -47,6 +62,7 @@ public:
     }
 };
 
+
 int main()
 {
     Sample s1; // Sample()
@@ -56,20 +72,5 @@ int main()
     Sample s4 = 10;
     Sample s5 = { "Tom", 42 };
     Sample s6 { "Tom", 42 };
-}
-
-#if 0
-Stack s1;
-int main()
-{
-    Stack s2;
-
-    s1.push(10);
-    s1.push(20);
-    cout << s1.pop() << endl;
-    cout << s1.pop() << endl;
-
-    s2.push(30);
-    cout << s2.pop() << endl;
 }
 #endif

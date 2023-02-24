@@ -47,7 +47,7 @@ int main()
 //    코드 메모리 사용량이 증가할 수 있습니다.
 //   > 인라인 최적화를 통해 메모리 사용량을 최적화할 수 있습니다.
 //
-//  - 컴파일 속도가 증가합니다.
+//  - 컴파일 속도가 느려집니다.
 
 template <typename TYPE>
 inline TYPE square(TYPE x)

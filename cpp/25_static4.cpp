@@ -3,6 +3,19 @@
 #include <string>
 using namespace std;
 
+class Test {
+public:
+    int n = 10; // C++11, 필드 초기화
+    // static int s = 0; // 허용 X
+
+    constexpr static int c = 42; // 허용!
+};
+
+int main()
+{
+    cout << Test::c << endl;
+}
+
 // email / facebook
 
 // 생성자 오버로딩 한계
@@ -11,7 +24,7 @@ using namespace std;
 // => 정적 멤버 함수를 통해 객체를 생성하는 방법을 통해 해결할 수 있습니다.
 
 // 팩토리: 객체를 생성하는 역활
-
+#if 0
 class User {
     string id;
 
@@ -38,6 +51,7 @@ int main()
     User user = User::CreateUserWithEmail("hello@gmail.com");
     User user2 = User::CreateUserWithFacebook("aslkdjalks");
 }
+#endif
 
 #if 0
 class User {

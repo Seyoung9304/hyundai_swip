@@ -11,7 +11,7 @@ using namespace std;
 //    반드시 복사 생성자를 제공해서, 얕은 복사의 문제를 해결해야 합니다.
 
 class User {
-    char* name;
+    char* name; // <---- !!!
     int age;
 
 public:

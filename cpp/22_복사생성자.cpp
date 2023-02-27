@@ -10,6 +10,7 @@ using namespace std;
 //    제공하지 않으면, 컴파일러는 자동으로 멤버 데이터를 복사하는
 //    복사 생성자를 제공합니다. 
 
+#if 0
 class Point {
     int x;
     int y;
@@ -48,3 +49,16 @@ int main()
     Point pt4 { pt };
     Point pt5 = { pt };
 }
+#endif
+
+class Sample1 {
+};
+// 기본생성자, 복사생성자
+
+class Sample2 {
+public:
+    Sample2(const Sample2&) { }
+}
+// 복사생성자(사용자), 기본 생성자는 제공되지 않습니다.
+// => 3. 사용자가 복사 생성자를 제공하면, 기본 생성자는 제공되지 않습니다.
+//   "복사생성자"도 생성자이기 때문입니다.

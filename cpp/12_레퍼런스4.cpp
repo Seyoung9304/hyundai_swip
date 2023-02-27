@@ -11,7 +11,7 @@ using namespace std;
 //    rvalue도 참조 가능합니다.
 //    const lvalue도 참조할 수 있습니다.
 
-// 3. C++11, rvalue reference
+// 3. C++11, rvalue reference, &&
 // => rvalue만 참조 가능합니다.
 
 // lvalue, rvalue

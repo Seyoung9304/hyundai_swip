@@ -24,7 +24,13 @@ using namespace std;
 //   - 연속된 메모리를 해지할 경우, 반드시 delete[]를 사용해야 합니다.
 //    int* p = new int[10];
 //    delete[] p;
-#if 0
+
+// 5. malloc을 통해 객체를 생성한 경우, 생성자가 호출되지 않습니다.
+//    new를 통해 객체를 생성한 경우, 생성자가 호출됩니다.
+//    free를 통해 객체를 해지한 경우, 소멸자가 호출되지 않습니다.
+//    delete를 통해 객체를 해지한 경우, 소멸자가 호출됩니다.
+
+#if 1
 int main()
 {
     int* p1 = static_cast<int*>(malloc(sizeof(int)));

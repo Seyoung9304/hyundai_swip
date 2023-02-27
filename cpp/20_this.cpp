@@ -7,6 +7,9 @@ class Point {
     int y;
 
 public:
+    // 멤버함수는 this가 암묵적으로 전달됩니다.
+    // => this는 객체의 주소입니다.
+
     // void Set(Point* const this, int a, int b)
     void Set(int a, int b)
     {

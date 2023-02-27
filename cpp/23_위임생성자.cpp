@@ -51,6 +51,7 @@ public:
     {
     }
 
+    // 주 생성자(Primary Constructor)
     Color(int r, int g, int b)
         : red(r)
         , green(g)

@@ -16,6 +16,7 @@ public:
     void foo() { cout << "foo" << endl; }
 };
 
+#if 1
 int main()
 {
     std::unique_ptr<Resource> p1(new Resource);
@@ -27,6 +28,7 @@ int main()
     cout << "p1: " << p1 << endl;
     cout << "p2: " << p2 << endl;
 }
+#endif
 
 #if 0
 int main()
@@ -36,8 +38,8 @@ int main()
 
     cout << "------" << endl;
     p1 = nullptr; // ref: 1
-    cout << "------" << endl;
+    cout << "-----**-" << endl;
     p2 = nullptr; // ref: 0 => 소멸자 호출
-    cout << "------" << endl;
+    cout << "-----**-" << endl;
 }
 #endif

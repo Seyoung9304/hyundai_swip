@@ -29,6 +29,7 @@ public:
 #endif
 // 3. 생성자에서 멤버 데이터에 대한 초기화를 수행하기 위해서는
 //   "초기화 리스트" 문법이 필요합니다.
+#if 0
 class Sample {
     const int a;
     int& b;
@@ -57,3 +58,20 @@ int main()
     // const int c;
     // int& r;
 }
+#endif
+
+// 4. 멤버 데이터의 초기화 순서는 초기화리스트의 순서가 아닌 선언 순서에 의해 결정됩니다.
+class Point {
+    int x;
+    int y;
+
+public:
+    // 5. 초기화 리스트의 순서는 멤버 데이터의 선언 순서와 동일하게
+    // 사용해야 합니다.
+    Point(int a, int b)
+        : x(a)
+        , y(b)
+
+    {
+    }
+};

@@ -12,7 +12,7 @@ using namespace std;
 // 3. friend
 //    - 클래스에서 friend로 선언된 함수나 클래스는
 //      자신의 private 멤버에 접근이 가능합니다.
-#if 0
+#if 1
 class User {
 private:
     string name;

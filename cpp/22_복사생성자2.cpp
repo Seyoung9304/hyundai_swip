@@ -32,16 +32,18 @@ int main()
 //  => 함수에서 객체를 값으로 반환하면, 값으로 반환하기 위한 임시 객체가 생성됩니다.
 
 Sample s;
-// Sample foo()
+
 Sample& foo()
+// Sample foo()
 {
     return s;
+    //  s -----> 반환용 임시 객체: 복사 생성자 호출(참조를 통해 제거)
 }
 
 int main()
 {
     cout << "----" << endl;
-    foo();
+    Sample s = foo(); // 반환용 임시 객체 ---> s : 복사 생성자 호출
     cout << "----" << endl;
 }
 

@@ -14,6 +14,8 @@ class User {
     int age = 42;
 
 public:
+    User() { }
+
     User(string s, int n)
         : name(s)
         , age(n)
@@ -28,6 +30,7 @@ public:
 
 int main()
 {
-    User user("Bob", 100);
+    // User user("Bob", 100);
+    User user;
     user.Print();
 }

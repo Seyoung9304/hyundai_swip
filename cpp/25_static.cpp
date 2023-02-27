@@ -37,6 +37,7 @@ public:
     int GetCount() { return cnt; }
 };
 
+// 정적 멤버 데이터 변수는 외부 정의가 반드시 필요합니다.
 int Car::cnt = 0; // 정적 멤버 데이터 정의(소스 파일)
 
 int main()

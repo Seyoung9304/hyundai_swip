@@ -16,7 +16,7 @@ int main()
 #if 0
 inline int sqaure(int x)
 {
-    return x * x;
+    return x * x; 
 }
 
 inline double square(double x)

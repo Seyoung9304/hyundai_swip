@@ -9,10 +9,17 @@ class Point {
 public:
     // 멤버함수는 this가 암묵적으로 전달됩니다.
     // => this는 객체의 주소입니다.
+    void foo() // foo(Point* const this)
+    {
+    }
 
     // void Set(Point* const this, int a, int b)
     void Set(int a, int b)
     {
+        foo();
+        // this->foo();
+        // foo(this);
+
         cout << this << endl;
         x = a;
         // this->x = a;

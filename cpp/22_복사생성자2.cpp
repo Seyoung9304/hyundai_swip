@@ -32,7 +32,8 @@ int main()
 //  => 함수에서 객체를 값으로 반환하면, 값으로 반환하기 위한 임시 객체가 생성됩니다.
 
 Sample s;
-Sample foo()
+// Sample foo()
+Sample& foo()
 {
     return s;
 }

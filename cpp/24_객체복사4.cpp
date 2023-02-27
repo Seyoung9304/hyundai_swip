@@ -1,4 +1,4 @@
-// 24_객체복사2.cpp
+// 24_객체복사4.cpp
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -6,27 +6,23 @@ using namespace std;
 // 3. 해결 방법
 //  1) 깊은 복사
 //  2) 참조 계수(Reference Counting)
+//  3) 복사 금지
+
 class User {
     char* name;
     int age;
 
-    int* ref; // 참조 계수
+    // 복사 금지
+    //  - private 영역에 선언만 합니다. => 링크 오류
+    // User(const User& rhs);
+
+    // C++11: 복사 금지(delete function)
+    User(const User& rhs) = delete;
 
 public:
     ~User()
     {
-        if (--(*ref) == 0) {
-            delete[] name;
-            delete ref;
-        }
-    }
-
-    User(const User& rhs)
-        : name(rhs.name)
-        , age(rhs.age)
-        , ref(rhs.ref)
-    {
-        ++(*ref);
+        delete[] name;
     }
 
     User(const char* s, int n)
@@ -34,8 +30,6 @@ public:
     {
         name = new char[strlen(s) + 1];
         strcpy(name, s);
-
-        ref = new int(1);
     }
 
     void Print()
@@ -50,5 +44,5 @@ int main()
     user1.Print();
 
     User user2(user1);
-    user2.Print();
+    // user2.Print();
 }

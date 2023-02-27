@@ -35,7 +35,7 @@ public:
 //    최적화를 수행합니다.
 
 // RVO 최적화
-#if 0
+#if 1
 Complex Add(const Complex& lhs, const Complex& rhs)
 {
     return Complex(lhs.re + rhs.re, rhs.im + lhs.im);
@@ -46,7 +46,7 @@ Complex Add(const Complex& lhs, const Complex& rhs)
 // 최신 컴파일러는 NRVO를 지원합니다.
 //  : NRVO(Named RVO)
 
-#if 1
+#if 0
 Complex Add(const Complex& lhs, const Complex& rhs)
 {
     Complex result;

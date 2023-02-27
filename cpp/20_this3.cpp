@@ -78,7 +78,6 @@ int main()
 class Cursor {
 private:
     Cursor() { cout << "Cursor()" << endl; }
-
     friend Cursor* GetInstance();
 };
 

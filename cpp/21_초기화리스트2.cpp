@@ -17,7 +17,6 @@ public:
 // 3. 클래스의 멤버 데이터 객체가 기본 생성자를 제공하지 않는 경우
 // => 명시적으로 생성자를 호출하는 코드를
 //    초기화리스트를 통해 제공해야 합니다.
-
 class Rect {
     Point leftTop;
     Point rightBottom;

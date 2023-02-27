@@ -233,7 +233,7 @@ public:
     //  => 소멸자(Destructor)
     ~Stack()
     {
-        delete[] buff;
+        delete[] buff; // buff는 연속된 메모리(배열) -> 연속된 메모리를 delete할 때에는 뒤에 []를 붙여주어야 합니다
     }
 
     void push(int n)

@@ -43,7 +43,7 @@ Sample& foo()
 int main()
 {
     cout << "----" << endl;
-    Sample s = foo(); // 반환용 임시 객체 ---> s : 복사 생성자 호출
+    foo(); // 반환용 임시 객체 ---> s : 복사 생성자 호출
     cout << "----" << endl;
 }
 

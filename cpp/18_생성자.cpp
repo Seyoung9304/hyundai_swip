@@ -9,6 +9,10 @@ using namespace std;
 class Point {
     int x;
     int y;
+
+    // 컴파일러가 만들어주는 기본 생성자 형태
+    // public:
+    //     Point() { }
 };
 
 int main()
@@ -31,11 +35,11 @@ class Point {
     int y;
 
 public:
-    Point()
-    {
-        x = 0;
-        y = 0;
-    }
+    // Point()
+    // {
+    //     x = 0;
+    //     y = 0;
+    // }
 
     Point(int a, int b)
     {

@@ -6,7 +6,6 @@ using namespace std;
 // 3. 해결 방법
 //  1) 깊은 복사
 //  2) 참조 계수(Reference Counting)
-
 class User {
     char* name;
     int age;

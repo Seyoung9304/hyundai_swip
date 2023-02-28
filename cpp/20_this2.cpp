@@ -12,9 +12,15 @@ public:
     // 미정의 동작입니다.
     // => 아래 기법은 오래전에는 많이 사용되었지만,
     //    clang 도입 이후로 많이 변경되었습니다.
-    int call_f3()
+    int call_f3() // call_f3(Sample* this)
     {
         return this ? f3() : 0;
+        //            this->f3()
+    }
+
+    static int safe_f3(Sample* self)
+    {
+        return self ? self->f3() : 0;
     }
 
     int f3()

@@ -65,6 +65,22 @@ public:
     }
 };
 
+class UHDCamera : public BlackBox {
+public:
+    void StartRecording() override
+    {
+        cout << "UHDCamera Recording Start" << endl;
+    }
+    void StopRecording() override
+    {
+        cout << "UHDCamera Recording Stop" << endl;
+    }
+};
+
 int main()
 {
+    UHDCamera camera;
+    Car car(&camera);
+
+    car.Go();
 }

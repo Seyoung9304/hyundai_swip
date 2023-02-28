@@ -58,6 +58,7 @@ int main()
             }
             */
 
+            // Prototype Pattern
             Shape* copy = shapes[index]->Clone();
             shapes.push_back(copy);
         }

@@ -10,6 +10,8 @@ public:
 
 class Derived : public Base {
 public:
+    // 컴파일러는 생성자의 초기화리스트에서
+    // 부모 클래스의 기본 생성자를 호출하는 코드를 삽입합니다.
     Derived()
     // : Base() - 2
     {

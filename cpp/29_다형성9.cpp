@@ -95,3 +95,11 @@ int main()
         delete e;
     }
 }
+
+// UNIX(Linux)
+//   모든 것은 파일입니다.
+//     => 파일의 인터페이스를 통해 일반 파일, 장치, ...
+//     Open -> 일반 파일 Open
+//             디바이스 파일 Open
+//             소켓 파일 Open
+//      : VFS(Virtual File System)

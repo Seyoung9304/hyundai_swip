@@ -39,3 +39,18 @@ int main()
     User user("Tom");
     user.PrintName();
 }
+
+#if 0
+class Sample {
+public:
+    Sample() { }
+    ~Sample() { }
+};
+
+int main()
+{
+    Sample s;
+    // Sample::Sample();
+}
+// Sample::~Sample()
+#endif

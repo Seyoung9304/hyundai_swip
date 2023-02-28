@@ -29,21 +29,23 @@ public:
 #endif
 // 3. 생성자에서 멤버 데이터에 대한 초기화를 수행하기 위해서는
 //   "초기화 리스트" 문법이 필요합니다.
-#if 0
+#if 1
 class Sample {
-    const int a;
-    int& b;
+    const int a_;
+    int& b_;
 
 public:
-    Sample(int aa, int& ab)
-        : a(aa)
-        , b(ab)
+    Sample(int a, int& b)
+        : a_(a)
+        , b_(b)
     {
+        // a = aa; /* 대입*/
+        // b = ab; /* 대입*/
     }
 
     void Print()
     {
-        cout << a << ", " << b << endl;
+        cout << a_ << ", " << b_ << endl;
     }
 };
 

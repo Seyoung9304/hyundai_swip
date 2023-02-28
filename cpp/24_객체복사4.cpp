@@ -43,6 +43,6 @@ int main()
     User user1("Tom", 42);
     user1.Print();
 
-    User user2(user1);
+    User user2(user1); // 복사금지 시켜놓았기에 오류 발생
     // user2.Print();
 }

@@ -122,4 +122,11 @@ int main()
         .SetAge(42)
         .SetAddress("Seoul")
         .SetCompany("Hyundai");
+
+    int i = 0;
+    ++ ++ ++i;
+    cout << i << endl;
+
+    int a;
+    (a = 20) = 100;
 }

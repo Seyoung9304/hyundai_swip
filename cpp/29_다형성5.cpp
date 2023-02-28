@@ -13,7 +13,6 @@ using namespace std;
 //  => override
 //  1) 자식이 재정의한 멤버 함수가 부모에서 존재하는지 확인할 수 있습니다.
 //  2) 부모가 제공하는 멤버 함수가 가상함수가 아니면 허용되지 않습니다.
-
 class Animal {
 public:
     virtual void Hello() const { cout << "Animal Go" << endl; }

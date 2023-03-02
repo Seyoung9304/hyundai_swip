@@ -61,7 +61,7 @@ class Ptr {
 public:
     // RAII(Resource Acquation Is Initialize)
     // : 소멸자를 통해 자원을 자동으로 정리하는 기술
-    inline Ptr(TYPE* p = nullptr)
+    inline explicit Ptr(TYPE* p = nullptr)
         : obj(p)
     {
     }
@@ -71,10 +71,12 @@ public:
     inline TYPE* operator->() { return obj; }
 };
 
+#if 1
 int main()
 {
     // Ptr<Image> p = new Image;
-    Ptr p = new Image; // C++17, 생성자 인자를 통해 추론합니다.
+    // Ptr p = new Image; // C++17, 생성자 인자를 통해 추론합니다.
+    Ptr p(new Image);
 
     (*p).Draw();
     // Image& operator*()
@@ -83,3 +85,23 @@ int main()
     p->Draw();
     //  (Image*)->Draw();
 }
+#endif
+
+#if 0
+class Sample {
+public:
+    // 변환 생성자로 인한 암묵적인 캐스팅은 위험합니다.
+    explicit Sample(int n) { }
+};
+
+void foo(Sample s) { }
+
+int main()
+{
+    Sample s1(3);
+    Sample s2 { 3 };
+
+    // Sample s = 3;
+    // foo(42);
+}
+#endif

@@ -13,6 +13,7 @@ public:
 // 포인터의 역활을 수행하는 클래스
 //  => 스마트 포인터(Smart Pointer)
 //     Proxy Pattern
+#if 0
 class Ptr {
     Image* obj;
 
@@ -41,6 +42,8 @@ int main()
     //  (Image*)->Draw();
 }
 
+#endif
+
 #if 0
 int main()
 {
@@ -50,3 +53,33 @@ int main()
     delete p;
 }
 #endif
+
+template <typename TYPE>
+class Ptr {
+    TYPE* obj;
+
+public:
+    // RAII(Resource Acquation Is Initialize)
+    // : 소멸자를 통해 자원을 자동으로 정리하는 기술
+    inline Ptr(TYPE* p = nullptr)
+        : obj(p)
+    {
+    }
+    inline ~Ptr() { delete obj; }
+
+    inline TYPE& operator*() { return *obj; }
+    inline TYPE* operator->() { return obj; }
+};
+
+int main()
+{
+    // Ptr<Image> p = new Image;
+    Ptr p = new Image; // C++17, 생성자 인자를 통해 추론합니다.
+
+    (*p).Draw();
+    // Image& operator*()
+    // (Image&).Draw();
+
+    p->Draw();
+    //  (Image*)->Draw();
+}

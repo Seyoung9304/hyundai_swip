@@ -24,10 +24,18 @@ int main()
 #endif
 
 #include <vector>
+
+// 2. 컨테이너에서 컨테이너의 시작 위치를 가르키는 반복자를 얻는 멤버 함수
+//  => begin()
+//    컨테이너의 끝 다음 위치(past the end)를 가르키는 반복자를 얻는 멤버 함수
+//  => end()
+
+#include <list>
 int main()
 {
     //          p1             p2
-    vector<int> x = { 1, 2, 3, 4, 5 };
+    // vector<int> x = { 1, 2, 3, 4, 5 };
+    list<int> x = { 1, 2, 3, 4, 5 };
 
     auto p1 = x.begin();
     auto p2 = x.end(); // 끝 다음 위치(past the end)

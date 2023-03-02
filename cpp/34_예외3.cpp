@@ -57,3 +57,5 @@ int main()
     } catch (...) {
     }
 }
+
+// main() -> foo() -> goo()

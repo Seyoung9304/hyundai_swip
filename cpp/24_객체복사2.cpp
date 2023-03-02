@@ -19,6 +19,24 @@ public:
         strcpy(name, rhs.name);
     }
 
+    User& operator=(const User& rhs)
+    {
+        // 1. 자신과 동일한지 체크
+        if (this == &rhs)
+            return *this;
+
+        // 2. 연산 수행
+        age = rhs.age;
+        char* temp = new char[strlen(rhs.name) + 1];
+        strcpy(temp, rhs.name);
+
+        // 3. 자원 해지 / 반영
+        delete[] name;
+        name = temp;
+
+        return *this;
+    }
+
     ~User() { delete[] name; }
 
     User(const char* s, int n)
@@ -41,4 +59,6 @@ int main()
 
     User user2(user1);
     user2.Print();
+
+    user2 = user2;
 }

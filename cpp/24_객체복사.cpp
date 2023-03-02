@@ -6,9 +6,11 @@ using namespace std;
 // 1. 소멸자를 반드시 정의해야 하는 경우
 //  - 객체 내부에서 자원을 할당하는 경우
 
-// 2. 복사생성자를 반드시 직접 정의해야 하는 경우
+// 2. 복사생성자/대입연산자를 반드시 직접 정의해야 하는 경우
 //  - 객체가 포인터 멤버 데이터를 가지고 있는 경우
 //    반드시 복사 생성자를 제공해서, 얕은 복사의 문제를 해결해야 합니다.
+
+// 3. 복사 생성자와 대입 연산자는 반드시 동시에 제공되어야 합니다.
 
 class User {
     char* name; // <---- !!!
@@ -20,6 +22,15 @@ public:
         : name(rhs.name)
         , age(rhs.age)
     {
+    }
+
+    // 컴파일러가 만들어주는 대입 연산자 형태
+    User& operator=(const User& rhs)
+    {
+        name = rhs.name;
+        age = rhs.age;
+
+        return *this;
     }
 
     ~User() { delete[] name; }

@@ -71,6 +71,8 @@ T xfind(T begin, T end, F c)
 #include <vector>
 #include <list>
 
+#include <algorithm> // find
+
 // - 멤버 함수로 제공되는 경우
 // vector.find()
 // list.find()
@@ -87,7 +89,7 @@ int main()
     list<int> x = { 10, 20, 30, 40, 60 };
 
     // int* p = xfind(x, x + 5, 30);
-    auto p = xfind(begin(x), end(x), 30);
+    auto p = find(begin(x), end(x), 30);
 
     if (p != end(x)) {
         cout << *p << endl;

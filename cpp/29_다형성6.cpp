@@ -10,6 +10,7 @@ public:
 // C++11에서 final을 통해 오버라이딩이 더이상 허용되지 않게 할 수 있습니다.
 class Dog : public Animal {
 public:
+    // Template Method Pattern
     void Go() const override final { cout << "Dog Go" << endl; }
 };
 

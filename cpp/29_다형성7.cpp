@@ -19,7 +19,6 @@ class Dog : public Animal {
 public:
     Dog() { cout << "Dog()" << endl; }
     ~Dog() override { cout << "~Dog()" << endl; }
-    // 부모 소멸자가 가상인지 아닌지 확인할 수 있습니다.
 };
 
 int main()
@@ -29,6 +28,8 @@ int main()
 
     delete p;
     // Animal::~Animal() <- 정적 바이딩
+
+    // delete static_cast<Dog*>(p);
 }
 
 #if 0

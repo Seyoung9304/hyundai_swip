@@ -71,7 +71,18 @@ public:
     inline TYPE* operator->() { return obj; }
 };
 
-#if 1
+// C++ 에는 이미 스마트 포인터가 제공되고 있습니다.
+#include <memory> // unique_ptr, shared_ptr
+
+int main()
+{
+    shared_ptr<Image> p1(new Image);
+    // shared_ptr<Image> p2 = make_shared<Image>();
+
+    auto p2 = make_shared<Image>();
+}
+
+#if 0
 int main()
 {
     // Ptr<Image> p = new Image;

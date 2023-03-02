@@ -24,6 +24,15 @@ public:
     {
     }
 
+    // 컴파일러가 만들어주는 대입 연산자 형태
+    User& operator=(const User& rhs)
+    {
+        name = rhs.name;
+        age = rhs.age;
+
+        return *this;
+    }
+
     ~User() { delete[] name; }
 
     User(const char* s, int n)

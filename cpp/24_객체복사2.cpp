@@ -28,7 +28,7 @@ public:
         // 2. 연산 수행
         age = rhs.age;
         char* temp = new char[strlen(rhs.name) + 1];
-        strcpy(name, rhs.name);
+        strcpy(temp, rhs.name);
 
         // 3. 자원 해지 / 반영
         delete[] name;

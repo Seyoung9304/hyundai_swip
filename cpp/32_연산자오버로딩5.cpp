@@ -37,7 +37,6 @@ ostream& endl(ostream& os)
 }
 
 }
-
 using namespace std;
 
 // 1. endl은 함수입니다. => IO 조정자

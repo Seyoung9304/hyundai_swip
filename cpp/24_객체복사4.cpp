@@ -18,6 +18,7 @@ class User {
 
     // C++11: 복사 금지(delete function)
     User(const User& rhs) = delete;
+    User& operator=(const User& rhs) = delete;
 
 public:
     ~User()

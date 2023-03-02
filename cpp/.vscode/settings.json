@@ -63,6 +63,8 @@
     "algorithm": "cpp",
     "stack": "cpp",
     "deque": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "__tree": "cpp",
+    "map": "cpp"
   }
 }

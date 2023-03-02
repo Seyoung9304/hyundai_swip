@@ -40,13 +40,44 @@ int main()
     ++ ++n1;
     n1++;
     cout << n1 << endl;
+    /*
+            mov     DWORD PTR n1$[rsp], 100
+
+            mov     eax, DWORD PTR n1$[rsp]
+            inc     eax
+            mov     DWORD PTR n1$[rsp], eax
+            mov     eax, DWORD PTR n1$[rsp]
+            inc     eax
+            mov     DWORD PTR n1$[rsp], eax
+            mov     eax, DWORD PTR n1$[rsp]
+            inc     eax
+            mov     DWORD PTR n1$[rsp], eax
+
+    */
 
     Integer n2 = 100; // Integer(int)
     ++ ++n2;
     // operator++()
-
     n2++;
     // operator++(int) : 구분을 위해서, 더미 타입 인자가 있습니다.
 
     cout << n2 << endl;
+    /*
+        mov     DWORD PTR n2$[rsp], 100
+
+        mov     eax, DWORD PTR n2$[rsp]
+        inc     eax
+
+        mov     DWORD PTR n2$[rsp], eax
+        mov     eax, DWORD PTR n2$[rsp]
+        inc     eax
+        mov     DWORD PTR n2$[rsp], eax
+        mov     eax, DWORD PTR n2$[rsp]
+        mov     DWORD PTR temp$1[rsp], eax
+        mov     eax, DWORD PTR n2$[rsp]
+        inc     eax
+        mov     DWORD PTR n2$[rsp], eax
+        mov     eax, DWORD PTR temp$1[rsp]
+        mov     DWORD PTR $T2[rsp], eax
+        */
 }

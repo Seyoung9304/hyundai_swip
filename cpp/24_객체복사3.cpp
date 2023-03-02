@@ -12,13 +12,18 @@ class User {
 
     int* ref; // 참조 계수
 
-public:
-    ~User()
+    void Release()
     {
         if (--(*ref) == 0) {
             delete[] name;
             delete ref;
         }
+    }
+
+public:
+    ~User()
+    {
+        Release();
     }
 
     User(const User& rhs)
@@ -27,6 +32,26 @@ public:
         , ref(rhs.ref)
     {
         ++(*ref);
+    }
+
+    User& operator=(const User& rhs)
+    {
+        // 1. 자신과 동일한 객체의 대입인지 확인
+        if (this == &rhs)
+            return *this;
+
+        // 2. 자신이 가지고 있는 참조 계수 감소
+        //    참조 계수가 0일 경우, 자원 해지
+        Release();
+
+        // 3. 복사, 참조 계수 증가
+        name = rhs.name;
+        age = rhs.age;
+        ref = rhs.ref;
+
+        ++(*ref);
+
+        return *this;
     }
 
     User(const char* s, int n)

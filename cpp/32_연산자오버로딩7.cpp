@@ -80,6 +80,9 @@ int main()
     // shared_ptr<Image> p2 = make_shared<Image>();
 
     auto p2 = make_shared<Image>();
+
+    unique_ptr<Image> p3(new Image);
+    auto p4 = make_unique<Image>();
 }
 
 #if 0
